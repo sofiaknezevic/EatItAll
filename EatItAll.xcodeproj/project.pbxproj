@@ -15,6 +15,8 @@
 		5D44466D1E6DE56F00B311A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D44466B1E6DE56F00B311A1 /* LaunchScreen.storyboard */; };
 		5D4446781E6DE56F00B311A1 /* EatItAllTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446771E6DE56F00B311A1 /* EatItAllTests.m */; };
 		5D4446831E6DE56F00B311A1 /* EatItAllUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446821E6DE56F00B311A1 /* EatItAllUITests.m */; };
+		E19A14221E6DEB95002148DD /* StatusStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */; };
+		E19A14241E6DEBB1002148DD /* AddFoodStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		5D44467E1E6DE56F00B311A1 /* EatItAllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatItAllUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4446821E6DE56F00B311A1 /* EatItAllUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EatItAllUITests.m; sourceTree = "<group>"; };
 		5D4446841E6DE56F00B311A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatusStoryboard.storyboard; sourceTree = "<group>"; };
+		E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFoodStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				5D4446631E6DE56F00B311A1 /* ViewController.h */,
 				5D4446641E6DE56F00B311A1 /* ViewController.m */,
 				5D4446661E6DE56F00B311A1 /* Main.storyboard */,
+				E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */,
+				E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */,
 				5D4446691E6DE56F00B311A1 /* Assets.xcassets */,
 				5D44466B1E6DE56F00B311A1 /* LaunchScreen.storyboard */,
 				5D44466E1E6DE56F00B311A1 /* Info.plist */,
@@ -252,6 +258,8 @@
 				5D44466D1E6DE56F00B311A1 /* LaunchScreen.storyboard in Resources */,
 				5D44466A1E6DE56F00B311A1 /* Assets.xcassets in Resources */,
 				5D4446681E6DE56F00B311A1 /* Main.storyboard in Resources */,
+				E19A14221E6DEB95002148DD /* StatusStoryboard.storyboard in Resources */,
+				E19A14241E6DEBB1002148DD /* AddFoodStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +522,7 @@
 				5D4446891E6DE56F00B311A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D44468A1E6DE56F00B311A1 /* Build configuration list for PBXNativeTarget "EatItAllTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +531,7 @@
 				5D44468C1E6DE56F00B311A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D44468D1E6DE56F00B311A1 /* Build configuration list for PBXNativeTarget "EatItAllUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +540,7 @@
 				5D44468F1E6DE56F00B311A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
