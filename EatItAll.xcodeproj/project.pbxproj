@@ -27,6 +27,7 @@
 		E19A142A1E6E3003002148DD /* Vegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A14291E6E3003002148DD /* Vegetable.swift */; };
 		E19A142C1E6E3014002148DD /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A142B1E6E3014002148DD /* Fruit.swift */; };
 		E19A14561E6E44DA002148DD /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E19A14551E6E44DA002148DD /* DataManager.m */; };
+		E19A14581E6F1E9C002148DD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A14571E6F1E9C002148DD /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E19A142B1E6E3014002148DD /* Fruit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		E19A14541E6E44DA002148DD /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		E19A14551E6E44DA002148DD /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		E19A14571E6F1E9C002148DD /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				E19A142B1E6E3014002148DD /* Fruit.swift */,
 				E19A14541E6E44DA002148DD /* DataManager.h */,
 				E19A14551E6E44DA002148DD /* DataManager.m */,
+				E19A14571E6F1E9C002148DD /* NetworkManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				5D4446651E6DE56F00B311A1 /* ViewController.m in Sources */,
 				E19A142A1E6E3003002148DD /* Vegetable.swift in Sources */,
 				E19A14281E6E2DED002148DD /* UserFood.swift in Sources */,
+				E19A14581E6F1E9C002148DD /* NetworkManager.swift in Sources */,
 				5D4446921E6DFECE00B311A1 /* Food.swift in Sources */,
 				5DD94E1C1E6E583F00881BAF /* StatusViewController.m in Sources */,
 				E19A142C1E6E3014002148DD /* Fruit.swift in Sources */,

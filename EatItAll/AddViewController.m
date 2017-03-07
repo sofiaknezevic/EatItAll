@@ -23,7 +23,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    //put number of items in each array instead
+    
     return 3;
     
 }
