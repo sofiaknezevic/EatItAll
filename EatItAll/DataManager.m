@@ -12,6 +12,15 @@
 @implementation DataManager
 
 
++ (id)deafultManager {
+    static DataManager *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[self alloc] init];
+        [sharedManager setupJSONDataSource];
+    });
+    return sharedManager;
+}
 -(void)setupJSONDataSource{
     
     NSMutableDictionary<NSString*,NSArray<Food*>*>* tempDictionary;
@@ -28,15 +37,30 @@
         for(NSDictionary* food in obj ){
             if([key isEqualToString:@"Vegetables"]){
                 Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]URL:[NSURL URLWithString:food[@"imageURL"]]];
+        //  insert network manager local rep logic for imageurl
+
                 [tempArray addObject:veggie];
             }else if ([key isEqualToString:@"Fruit"]){
                 Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]URL:[NSURL URLWithString:food[@"imageURL"]]];
+        //  insert network manager  local rep logic for imageurl
+                
                 [tempArray addObject:fruit];
             }
         }
         [tempDictionary setObject:tempArray forKey:key];
 
     }];
+    self.foodTypeArray = foodArray;
+    self.JSONDataSource = tempDictionary;
+    
+}
+
+-(void)setupUserDataSource{
+    
+    NSMutableDictionary<NSString*,NSArray<Food*>*>* tempDictionary;
+    [tempDictionary setNilValueForKey:@"About to expire"];
+    
+
     
 }
     

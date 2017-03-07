@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class Food;
+@class UserFood;
 
 @interface DataManager : NSObject
 
-@property NSMutableDictionary<NSString*,Food*>* JSONDataSource;
-@property NSMutableDictionary<NSString*,Food*>* userDataSource;
+@property NSMutableDictionary<NSString*,NSArray<Food*>*>* JSONDataSource;
+@property NSMutableArray<NSString*>* foodTypeArray;
+@property NSMutableDictionary<NSString*,NSArray<UserFood*>*>* userDataSource;
 
 
 @end
