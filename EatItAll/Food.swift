@@ -12,14 +12,15 @@ class Food: NSObject {
     
     let name: String
     let shelfLife: Int
-    
+    var foodType: String?
+    let imageURL: URL
     
 
-    init(name:String, startDate:Date, endDate:Date, shelfLife:Int) {
+    init(name:String, shelfLife:Int, URL: URL) {
         
         self.name = name
         self.shelfLife = shelfLife
-        
+        self.imageURL = URL
         super.init()
         
     }
