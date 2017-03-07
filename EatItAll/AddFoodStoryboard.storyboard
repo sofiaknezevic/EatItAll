@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Add Food-->
         <scene sceneID="vZf-Sw-Dad">
             <objects>
-                <viewController id="asa-Mn-m1g" sceneMemberID="viewController">
+                <viewController id="asa-Mn-m1g" customClass="AddViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HXu-KQ-Sj7"/>
                         <viewControllerLayoutGuide type="bottom" id="Lgc-By-eFb"/>
@@ -20,14 +21,78 @@
                     <view key="view" contentMode="scaleToFill" id="0tY-sN-Fg8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vro-aE-CiQ" userLabel="Food Collection View">
+                                <rect key="frame" x="8" y="28" width="359" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YAg-6h-Lkk">
+                                    <size key="itemSize" width="101" height="100"/>
+                                    <size key="headerReferenceSize" width="50" height="49"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodCell" id="iJ3-lg-UER" customClass="AddCollectionViewCell" customModule="EatItAll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49" width="101" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-So-khG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="77.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-TT-ZSt">
+                                                    <rect key="frame" x="0.0" y="77.5" width="101" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="4m2-TT-ZSt" secondAttribute="bottom" id="BCI-i9-Q8e"/>
+                                            <constraint firstItem="U7d-So-khG" firstAttribute="top" secondItem="iJ3-lg-UER" secondAttribute="top" id="Wgj-Bo-riH"/>
+                                            <constraint firstItem="4m2-TT-ZSt" firstAttribute="top" secondItem="U7d-So-khG" secondAttribute="bottom" id="X7h-ie-aS3"/>
+                                            <constraint firstAttribute="trailing" secondItem="4m2-TT-ZSt" secondAttribute="trailing" id="aJe-im-TGM"/>
+                                            <constraint firstItem="4m2-TT-ZSt" firstAttribute="top" secondItem="U7d-So-khG" secondAttribute="bottom" id="eZH-Mk-Prr"/>
+                                            <constraint firstItem="4m2-TT-ZSt" firstAttribute="leading" secondItem="iJ3-lg-UER" secondAttribute="leading" id="hjl-xx-gIS"/>
+                                            <constraint firstAttribute="trailing" secondItem="U7d-So-khG" secondAttribute="trailing" id="i78-Xa-5WN"/>
+                                            <constraint firstItem="U7d-So-khG" firstAttribute="leading" secondItem="iJ3-lg-UER" secondAttribute="leading" id="p6Q-8K-F57"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="foodImageView" destination="U7d-So-khG" id="RKb-ET-V3J"/>
+                                            <outlet property="foodLabel" destination="4m2-TT-ZSt" id="mvh-Nk-mSQ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodHeader" id="JLX-Es-f4L">
+                                    <rect key="frame" x="0.0" y="0.0" width="359" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="asa-Mn-m1g" id="ajB-fa-fJw"/>
+                                    <outlet property="delegate" destination="asa-Mn-m1g" id="Wr0-u1-hpp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vro-aE-CiQ" firstAttribute="trailing" secondItem="0tY-sN-Fg8" secondAttribute="trailingMargin" constant="8" id="GdH-uI-qyG"/>
+                            <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="vro-aE-CiQ" secondAttribute="bottom" id="PAE-mU-det"/>
+                            <constraint firstItem="vro-aE-CiQ" firstAttribute="top" secondItem="HXu-KQ-Sj7" secondAttribute="bottom" constant="8" id="ZRd-sM-nrF"/>
+                            <constraint firstItem="vro-aE-CiQ" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="oPW-92-fTa"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Food" id="H9i-HK-0To"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="foodCollectionView" destination="vro-aE-CiQ" id="meF-C6-KkG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRz-Ae-6Px" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="92"/>
+            <point key="canvasLocation" x="21.600000000000001" y="91.304347826086968"/>
         </scene>
     </scenes>
 </document>

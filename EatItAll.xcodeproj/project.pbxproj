@@ -17,6 +17,10 @@
 		5D4446831E6DE56F00B311A1 /* EatItAllUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446821E6DE56F00B311A1 /* EatItAllUITests.m */; };
 		5D4446921E6DFECE00B311A1 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4446911E6DFECE00B311A1 /* Food.swift */; };
 		5D7FD8E71E6E39290077FCFA /* FoodInfo in Resources */ = {isa = PBXBuildFile; fileRef = 5D7FD8E61E6E39290077FCFA /* FoodInfo */; };
+		5DD94E161E6E44A700881BAF /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD94E151E6E44A700881BAF /* AddViewController.m */; };
+		5DD94E191E6E4B0B00881BAF /* AddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD94E181E6E4B0B00881BAF /* AddCollectionViewCell.swift */; };
+		5DD94E1C1E6E583F00881BAF /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD94E1B1E6E583F00881BAF /* StatusViewController.m */; };
+		5DD94E1E1E6E5C0F00881BAF /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD94E1D1E6E5C0F00881BAF /* StatusTableViewCell.swift */; };
 		E19A14221E6DEB95002148DD /* StatusStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */; };
 		E19A14241E6DEBB1002148DD /* AddFoodStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */; };
 		E19A14281E6E2DED002148DD /* UserFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A14271E6E2DED002148DD /* UserFood.swift */; };
@@ -61,6 +65,12 @@
 		5D4446901E6DFECE00B311A1 /* EatItAll-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EatItAll-Bridging-Header.h"; sourceTree = "<group>"; };
 		5D4446911E6DFECE00B311A1 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		5D7FD8E61E6E39290077FCFA /* FoodInfo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodInfo; sourceTree = "<group>"; };
+		5DD94E141E6E44A700881BAF /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		5DD94E151E6E44A700881BAF /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		5DD94E181E6E4B0B00881BAF /* AddCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewCell.swift; sourceTree = "<group>"; };
+		5DD94E1A1E6E583F00881BAF /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		5DD94E1B1E6E583F00881BAF /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		5DD94E1D1E6E5C0F00881BAF /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatusStoryboard.storyboard; sourceTree = "<group>"; };
 		E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFoodStoryboard.storyboard; sourceTree = "<group>"; };
 		E19A14271E6E2DED002148DD /* UserFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFood.swift; sourceTree = "<group>"; };
@@ -116,6 +126,7 @@
 		5D44465C1E6DE56F00B311A1 /* EatItAll */ = {
 			isa = PBXGroup;
 			children = (
+				5DD94E171E6E4ADD00881BAF /* View */,
 				5D7FD8E81E6E41B90077FCFA /* Controllers */,
 				E19A142D1E6E3020002148DD /* Models */,
 				5D7FD8E91E6E41D20077FCFA /* StoryBoards */,
@@ -161,6 +172,10 @@
 			children = (
 				5D4446631E6DE56F00B311A1 /* ViewController.h */,
 				5D4446641E6DE56F00B311A1 /* ViewController.m */,
+				5DD94E141E6E44A700881BAF /* AddViewController.h */,
+				5DD94E151E6E44A700881BAF /* AddViewController.m */,
+				5DD94E1A1E6E583F00881BAF /* StatusViewController.h */,
+				5DD94E1B1E6E583F00881BAF /* StatusViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +189,15 @@
 				5D44466B1E6DE56F00B311A1 /* LaunchScreen.storyboard */,
 			);
 			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		5DD94E171E6E4ADD00881BAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DD94E181E6E4B0B00881BAF /* AddCollectionViewCell.swift */,
+				5DD94E1D1E6E5C0F00881BAF /* StatusTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E19A142D1E6E3020002148DD /* Models */ = {
@@ -331,9 +355,13 @@
 				E19A142A1E6E3003002148DD /* Vegetable.swift in Sources */,
 				E19A14281E6E2DED002148DD /* UserFood.swift in Sources */,
 				5D4446921E6DFECE00B311A1 /* Food.swift in Sources */,
+				5DD94E1C1E6E583F00881BAF /* StatusViewController.m in Sources */,
 				E19A142C1E6E3014002148DD /* Fruit.swift in Sources */,
 				5D4446621E6DE56F00B311A1 /* AppDelegate.m in Sources */,
+				5DD94E191E6E4B0B00881BAF /* AddCollectionViewCell.swift in Sources */,
+				5DD94E161E6E44A700881BAF /* AddViewController.m in Sources */,
 				5D44465F1E6DE56F00B311A1 /* main.m in Sources */,
+				5DD94E1E1E6E5C0F00881BAF /* StatusTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

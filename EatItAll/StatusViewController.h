@@ -1,18 +1,13 @@
 //
-//  ViewController.m
+//  StatusViewController.h
 //  EatItAll
 //
 //  Created by Sofia Knezevic on 2017-03-06.
 //  Copyright © 2017 Sofia Knezevic. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface ViewController ()
-
-@end
-
-@implementation ViewController
-
+@interface StatusViewController : UIViewController
 
 @end
