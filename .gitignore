@@ -46,9 +46,11 @@ fastlane/screenshots
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 iOSInjectionProject/
+
 EatItAll.xcodeproj/project.xcworkspace/xcuserdata/
-EatItAll.xcodeproj/project.pbxproj
+EatItAll.xcodeproj/xcuserdata/alibarisoztekin.xcuserdatad/
 EatItAll.xcworkspace/
+EatItAll.xcodeproj/project.pbxproj
 Podfile
 Podfile.lock
 Pods/
