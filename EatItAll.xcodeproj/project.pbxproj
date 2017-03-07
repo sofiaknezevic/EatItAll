@@ -116,18 +116,9 @@
 		5D44465C1E6DE56F00B311A1 /* EatItAll */ = {
 			isa = PBXGroup;
 			children = (
-				5D4446601E6DE56F00B311A1 /* AppDelegate.h */,
-				5D4446611E6DE56F00B311A1 /* AppDelegate.m */,
-				5D4446631E6DE56F00B311A1 /* ViewController.h */,
-				5D4446641E6DE56F00B311A1 /* ViewController.m */,
+				5D7FD8E81E6E41B90077FCFA /* Controllers */,
 				E19A142D1E6E3020002148DD /* Models */,
-				5D4446661E6DE56F00B311A1 /* Main.storyboard */,
-				E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */,
-				E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */,
-				5D4446691E6DE56F00B311A1 /* Assets.xcassets */,
-				5D44466B1E6DE56F00B311A1 /* LaunchScreen.storyboard */,
-				5D44466E1E6DE56F00B311A1 /* Info.plist */,
-				5D7FD8E61E6E39290077FCFA /* FoodInfo */,
+				5D7FD8E91E6E41D20077FCFA /* StoryBoards */,
 				5D44465D1E6DE56F00B311A1 /* Supporting Files */,
 				5D4446901E6DFECE00B311A1 /* EatItAll-Bridging-Header.h */,
 			);
@@ -137,6 +128,11 @@
 		5D44465D1E6DE56F00B311A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D4446691E6DE56F00B311A1 /* Assets.xcassets */,
+				5D44466E1E6DE56F00B311A1 /* Info.plist */,
+				5D7FD8E61E6E39290077FCFA /* FoodInfo */,
+				5D4446601E6DE56F00B311A1 /* AppDelegate.h */,
+				5D4446611E6DE56F00B311A1 /* AppDelegate.m */,
 				5D44465E1E6DE56F00B311A1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -158,6 +154,26 @@
 				5D4446841E6DE56F00B311A1 /* Info.plist */,
 			);
 			path = EatItAllUITests;
+			sourceTree = "<group>";
+		};
+		5D7FD8E81E6E41B90077FCFA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D4446631E6DE56F00B311A1 /* ViewController.h */,
+				5D4446641E6DE56F00B311A1 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5D7FD8E91E6E41D20077FCFA /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				5D4446661E6DE56F00B311A1 /* Main.storyboard */,
+				E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */,
+				E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */,
+				5D44466B1E6DE56F00B311A1 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoards;
 			sourceTree = "<group>";
 		};
 		E19A142D1E6E3020002148DD /* Models */ = {
