@@ -18,6 +18,7 @@
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
         [sharedManager setupJSONDataSource];
+        [sharedManager setupUserDataSource];
     });
     return sharedManager;
 }
