@@ -22,6 +22,7 @@
 		E19A14281E6E2DED002148DD /* UserFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A14271E6E2DED002148DD /* UserFood.swift */; };
 		E19A142A1E6E3003002148DD /* Vegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A14291E6E3003002148DD /* Vegetable.swift */; };
 		E19A142C1E6E3014002148DD /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A142B1E6E3014002148DD /* Fruit.swift */; };
+		E19A14561E6E44DA002148DD /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E19A14551E6E44DA002148DD /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +61,14 @@
 		5D4446841E6DE56F00B311A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D4446901E6DFECE00B311A1 /* EatItAll-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EatItAll-Bridging-Header.h"; sourceTree = "<group>"; };
 		5D4446911E6DFECE00B311A1 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		5D7FD8E61E6E39290077FCFA /* FoodInfo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodInfo; sourceTree = "<group>"; };
+		5D7FD8E61E6E39290077FCFA /* FoodInfo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodInfo; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		E19A14211E6DEB95002148DD /* StatusStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatusStoryboard.storyboard; sourceTree = "<group>"; };
 		E19A14231E6DEBB1002148DD /* AddFoodStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFoodStoryboard.storyboard; sourceTree = "<group>"; };
 		E19A14271E6E2DED002148DD /* UserFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFood.swift; sourceTree = "<group>"; };
 		E19A14291E6E3003002148DD /* Vegetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vegetable.swift; sourceTree = "<group>"; };
 		E19A142B1E6E3014002148DD /* Fruit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		E19A14541E6E44DA002148DD /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		E19A14551E6E44DA002148DD /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 				5D4446911E6DFECE00B311A1 /* Food.swift */,
 				E19A14291E6E3003002148DD /* Vegetable.swift */,
 				E19A142B1E6E3014002148DD /* Fruit.swift */,
+				E19A14541E6E44DA002148DD /* DataManager.h */,
+				E19A14551E6E44DA002148DD /* DataManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				E19A14281E6E2DED002148DD /* UserFood.swift in Sources */,
 				5D4446921E6DFECE00B311A1 /* Food.swift in Sources */,
 				E19A142C1E6E3014002148DD /* Fruit.swift in Sources */,
+				E19A14561E6E44DA002148DD /* DataManager.m in Sources */,
 				5D4446621E6DE56F00B311A1 /* AppDelegate.m in Sources */,
 				5D44465F1E6DE56F00B311A1 /* main.m in Sources */,
 			);
