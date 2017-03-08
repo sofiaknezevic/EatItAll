@@ -18,9 +18,9 @@ class Vegetable: Food {
         
     }
     
-    override init(name:String, shelfLife:Int, imageName:String) {
+    override init(name:String, shelfLife:Int, imageName:String, groupName: String) {
 
-        super.init(name:name, shelfLife:shelfLife, imageName:imageName)
+        super.init(name:name, shelfLife:shelfLife, imageName:imageName, groupName: groupName)
 
     }
 

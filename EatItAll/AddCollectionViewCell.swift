@@ -24,7 +24,6 @@ class AddCollectionViewCell: UICollectionViewCell {
         
         self.foodLabel.text = food.name
         
-        //let imageData:Data? = try? Data (contentsOf: food.imageURL)
         
         self.foodImageView.image = UIImage.init(named:food.imageName)
         

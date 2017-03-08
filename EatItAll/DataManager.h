@@ -15,7 +15,7 @@
 
 @property NSMutableDictionary<NSString*,NSArray*>* JSONDataSource;
 @property NSMutableArray<NSString*>* foodTypeArray;
-@property NSMutableDictionary<NSString*,NSArray<UserFood*>*>* userDataSource;
+@property NSMutableDictionary<NSString*,NSMutableArray<UserFood*>*>* userDataSource;
 
 + (id)defaultManager;
 

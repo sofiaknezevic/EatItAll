@@ -38,12 +38,12 @@
         NSMutableArray* tempArray = [[NSMutableArray alloc] init];
         for(NSDictionary* food in obj ){
             if([key isEqualToString:@"Vegetables"]){
-                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"]];
+                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"] groupName:key];
 
                 
                 [tempArray addObject:veggie];
             }else if ([key isEqualToString:@"Fruit"]){
-                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"]];
+                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"] groupName:key];
 
                 [tempArray addObject:fruit];
             }
@@ -59,15 +59,23 @@
 
 -(void)setupUserDataSource{
     
-    NSMutableDictionary<NSString*,NSArray<UserFood*>*>* tempDictionary;
-    [tempDictionary setNilValueForKey:@"About to expire"];
+    NSMutableDictionary<NSString*,NSMutableArray<UserFood*>*>* tempDictionary;
+    [tempDictionary setObject:[NSMutableArray new] forKey:@"About to expire"];
     
     for (NSString* key in self.foodTypeArray) {
-        [tempDictionary setNilValueForKey:key];
+        [tempDictionary setObject:[NSMutableArray new] forKey:key];
 
     }
     
 }
 
+-(void)insertUserFoodArrayToDataSourceWithArray:(NSArray*)foodArrayFromUser {
+    
+    for (Food* food in foodArrayFromUser) {
+        UserFood* userFood =[[UserFood alloc] initWithCreationDate:[NSDate date] food:food];
+        NSMutableArray* userArray= [self.userDataSource objectForKey:food.groupName];
+        [userArray addObject:userFood];
+    }
+}
 
 @end
