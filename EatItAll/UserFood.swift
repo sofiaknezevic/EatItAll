@@ -15,7 +15,7 @@ class UserFood: RLMObject {
     
     var expiryDate: Date {
         
-        return makeExpiryDate(creationDate:creationDate,shelfLife:Double(food.shelfLife))
+        return makeExpiryDate(creationDate:creationDate,shelfLife:Double(food.shelfLife)!)
         
     }
     

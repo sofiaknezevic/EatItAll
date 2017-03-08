@@ -20,19 +20,10 @@ class AddCollectionViewCell: UICollectionViewCell {
     
     func configureCell(food:Food) -> Void {
         
-        //change to incorporate images correctly
-        
         self.foodLabel.text = food.name
         
-        
         self.foodImageView.image = UIImage.init(named:food.imageName)
-        
-        
 
-        
     }
-    
-  
-    
-    
+
 }
