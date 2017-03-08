@@ -17,7 +17,10 @@
 @property NSMutableArray<NSString*>* foodTypeArray;
 @property NSMutableDictionary<NSString*,NSMutableArray<UserFood*>*>* userDataSource;
 
+@property BOOL toImportOrNotToImport;
+
 + (id)defaultManager;
+-(void)insertUserFoodArrayToDataSourceWithArray:(NSArray*)foodArrayFromUser;
 
 
 @end

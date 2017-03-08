@@ -12,7 +12,7 @@ import Realm
 class Food: RLMObject {
     
     var name: String!
-    var shelfLife: Int!
+    var shelfLife: String!
     var imageName: String!
     var groupName: String!
     
@@ -23,11 +23,12 @@ class Food: RLMObject {
     }
     
     
-    init(name:String, shelfLife:Int, imageName: String, groupName: String) {
+    init(name:String, shelfLife:String, imageName: String, groupName: String) {
         
         self.name = name
         self.shelfLife = shelfLife
         self.imageName = imageName
+        self.groupName = groupName
         super.init()
         
     }

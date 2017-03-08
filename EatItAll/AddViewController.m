@@ -98,6 +98,8 @@
 - (IBAction)saveButtonClicked:(id)sender {
     
     
+    [self.dataManager insertUserFoodArrayToDataSourceWithArray:self.userFoodsArray];
+    
     NSLog(@"%@", self.userFoodsArray);
     
     

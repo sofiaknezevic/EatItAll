@@ -17,12 +17,24 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
+        
         [sharedManager setupJSONDataSource];
         [sharedManager setupUserDataSource];
+
+     
     });
     return sharedManager;
 }
+
+
 -(void)setupJSONDataSource{
+    
+    //must refactor this disgusting code!!!
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    RLMResults<Vegetable *> *vegetableFoods = [Vegetable allObjects];
+    RLMResults<Fruit *> *fruitFoods = [Fruit allObjects];
+    
     
     NSMutableDictionary<NSString*,NSArray*>* tempDictionary = [[NSMutableDictionary alloc] init];
     NSMutableArray<NSString*>* foodArray = [[NSMutableArray alloc] init];
@@ -35,26 +47,63 @@
     [jsonDictionary[@"Food"] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         [foodArray addObject:key];
+        
         NSMutableArray* tempArray = [[NSMutableArray alloc] init];
+            
         for(NSDictionary* food in obj ){
+            
+            
             if([key isEqualToString:@"Vegetables"]){
-                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"] groupName:key];
-
-                
+                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:food[@"shelfLife"]imageName:food[@"imageName"] groupName:key];
+        
+            
                 [tempArray addObject:veggie];
             }else if ([key isEqualToString:@"Fruit"]){
-                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"] groupName:key];
 
+                
+                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:food[@"shelfLife"]imageName:food[@"imageName"] groupName:key];
+                
                 [tempArray addObject:fruit];
             }
+        
+            
         }
         [tempDictionary setObject:tempArray forKey:key];
         self.foodTypeArray = foodArray;
         self.JSONDataSource = tempDictionary;
         
-    }];
+     
+     if (vegetableFoods.count < tempArray.count && fruitFoods.count < tempArray.count) {
+         
+         for (NSDictionary *food in obj) {
+             if([key isEqualToString:@"Vegetables"]){
+                 Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:food[@"shelfLife"]imageName:food[@"imageName"] groupName:key];
+                 
+                 
+                 [realm transactionWithBlock:^{
+                     [realm addObject:veggie];
+                 }];
+                 
+             }else if ([key isEqualToString:@"Fruit"]){
+                 
+                 
+                 Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:food[@"shelfLife"]imageName:food[@"imageName"] groupName:key];
+                 
+                 
+                 [realm transactionWithBlock:^{
+                     [realm addObject:fruit];
+                 }];
+                 
+             }
 
+         }
+         
+     }
+        
+    }];
+        
     
+
 }
 
 -(void)setupUserDataSource{
@@ -76,6 +125,7 @@
         NSMutableArray* userArray= [self.userDataSource objectForKey:food.groupName];
         [userArray addObject:userFood];
     }
+    
 }
 
 @end

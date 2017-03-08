@@ -227,7 +227,8 @@
       },
       {
         "name":"Coconut",
-        "shelfLife":"coconuts-575780_150.png",
+        "shelfLife":"10",
+        "imageName":"coconuts-575780_150.png",
       },
       {
         "name":"Cherries",
