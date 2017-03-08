@@ -39,10 +39,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-So-khG">
+                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-So-khG">
                                                     <rect key="frame" x="0.0" y="0.0" width="101" height="81.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-TT-ZSt">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-TT-ZSt">
                                                     <rect key="frame" x="0.0" y="81.5" width="101" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -75,12 +75,22 @@
                                     <outlet property="delegate" destination="asa-Mn-m1g" id="Wr0-u1-hpp"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSs-Zz-ddu">
+                                <rect key="frame" x="154" y="580" width="67" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="asa-Mn-m1g" eventType="touchUpInside" id="n5i-fq-p1e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="RSs-Zz-ddu" secondAttribute="trailing" constant="138" id="3bJ-22-AZw"/>
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="trailing" secondItem="0tY-sN-Fg8" secondAttribute="trailingMargin" constant="8" id="GdH-uI-qyG"/>
                             <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="vro-aE-CiQ" secondAttribute="bottom" id="PAE-mU-det"/>
+                            <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="RSs-Zz-ddu" secondAttribute="bottom" constant="8" id="Z06-3n-Dg7"/>
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="top" secondItem="HXu-KQ-Sj7" secondAttribute="bottom" constant="8" id="ZRd-sM-nrF"/>
+                            <constraint firstItem="RSs-Zz-ddu" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="mba-2q-y8a"/>
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="oPW-92-fTa"/>
                         </constraints>
                     </view>

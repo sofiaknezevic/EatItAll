@@ -20,5 +20,4 @@
 + (id)defaultManager;
 
 
-
 @end

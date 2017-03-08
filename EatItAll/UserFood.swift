@@ -7,20 +7,32 @@
 //
 
 import UIKit
+import Realm
 
-class userFood: NSObject {
-        
+class UserFood: RLMObject {
     
-    let creationDate: Date
+    var creationDate: Date!
+    
     var expiryDate: Date {
-        return makeExpiryDate(creationDate:creationDate,shelfLife:Double(food.shelfLife))
-    }
-    let food: Food
         
+        return makeExpiryDate(creationDate:creationDate,shelfLife:Double(food.shelfLife))
+        
+    }
+    
+    var food: Food!
+    
+    override init() {
+        
+        super.init()
+        
+    }
+    
     init(creationDate:Date ,food:Food ) {
+        
         self.food = food
         self.creationDate = creationDate
         super.init()
+        
     }
     
     func makeExpiryDate(creationDate:Date ,shelfLife:Double ) -> Date  {

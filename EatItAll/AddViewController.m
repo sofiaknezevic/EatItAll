@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) DataManager *dataManager;
 @property (weak, nonatomic) IBOutlet UICollectionView *foodCollectionView;
+@property (nonatomic, strong) NSMutableArray *userFoodsArray;
 
 
 @end
@@ -27,15 +28,13 @@
 {
     [super viewDidLoad];
     
+    [self.foodCollectionView setAllowsMultipleSelection:YES];
+    
+    self.userFoodsArray = [[NSMutableArray alloc] init];
+    
     self.dataManager = [DataManager defaultManager];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.foodCollectionView reloadData];
-
-}
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
@@ -62,6 +61,34 @@
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSString *key = self.dataManager.foodTypeArray[indexPath.section];
+    
+    Food *newFood = [self.dataManager.JSONDataSource objectForKey:key][indexPath.row];
+    [self.userFoodsArray addObject:newFood];
+
+    
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *key = self.dataManager.foodTypeArray[indexPath.section];
+    
+    Food *newFood = [self.dataManager.JSONDataSource objectForKey:key][indexPath.row];
+    [self.userFoodsArray removeObject:newFood];
+    
+}
+
+- (IBAction)saveButtonClicked:(id)sender {
+    
+    
+    NSLog(@"%@", self.userFoodsArray);
+    
+    
+}
 
 
 
