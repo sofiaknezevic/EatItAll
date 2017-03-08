@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *userFoodsArray;
 
 
+
 @end
 
 @implementation AddViewController
@@ -65,6 +66,7 @@
 {
     
     NSString *key = self.dataManager.foodTypeArray[indexPath.section];
+
     
     Food *newFood = [self.dataManager.JSONDataSource objectForKey:key][indexPath.row];
     [self.userFoodsArray addObject:newFood];
@@ -79,6 +81,17 @@
     
     Food *newFood = [self.dataManager.JSONDataSource objectForKey:key][indexPath.row];
     [self.userFoodsArray removeObject:newFood];
+    
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    HeaderCollectionReusableView *headerView = [self.foodCollectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kFoodHeaderIdentifier forIndexPath:indexPath];
+
+    [headerView configureHeaderWithFoodType:self.dataManager.foodTypeArray[indexPath.section]];
+    
+    return headerView;
     
 }
 

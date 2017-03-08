@@ -26,7 +26,6 @@
     
     NSMutableDictionary<NSString*,NSArray*>* tempDictionary = [[NSMutableDictionary alloc] init];
     NSMutableArray<NSString*>* foodArray = [[NSMutableArray alloc] init];
-    NetworkManager* networkManager = [NetworkManager new];
     
     
     NSString *pathForJSON = [[NSBundle mainBundle] pathForResource:@"FoodInfo" ofType:@"JSON"];
@@ -40,16 +39,12 @@
         for(NSDictionary* food in obj ){
             if([key isEqualToString:@"Vegetables"]){
                 Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageURLString:food[@"imageURL"]];
-                [networkManager imageDataWithString:veggie.imageURLString completionHandler:^(NSData * _Nonnull data) {
-                    veggie.imageData = data;
-                }];
+
                 
                 [tempArray addObject:veggie];
             }else if ([key isEqualToString:@"Fruit"]){
                 Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageURLString:food[@"imageURL"]];
-                [networkManager imageDataWithString:fruit.imageURLString completionHandler:^(NSData * _Nonnull data) {
-                    fruit.imageData = data;
-                }];
+
                 [tempArray addObject:fruit];
             }
         }

@@ -29,11 +29,11 @@
                                     <size key="itemSize" width="101" height="100"/>
                                     <size key="headerReferenceSize" width="50" height="49"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodCell" id="iJ3-lg-UER" customClass="AddCollectionViewCell" customModule="EatItAll" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49" width="101" height="100"/>
+                                        <rect key="frame" x="0.0" y="51" width="101" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
@@ -42,7 +42,7 @@
                                                 <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-So-khG">
                                                     <rect key="frame" x="0.0" y="0.0" width="101" height="81.5"/>
                                                 </imageView>
-                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-TT-ZSt">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-TT-ZSt">
                                                     <rect key="frame" x="0.0" y="81.5" width="101" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -66,9 +66,26 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodHeader" id="JLX-Es-f4L">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodHeader" id="JLX-Es-f4L" customClass="HeaderCollectionReusableView" customModule="EatItAll" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvc-7d-SnZ">
+                                            <rect key="frame" x="8" y="0.0" width="343" height="49"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xvc-7d-SnZ" firstAttribute="top" secondItem="JLX-Es-f4L" secondAttribute="topMargin" constant="-8" id="0dx-Kt-4q1"/>
+                                        <constraint firstItem="xvc-7d-SnZ" firstAttribute="leading" secondItem="JLX-Es-f4L" secondAttribute="leadingMargin" id="kqe-7z-Q0c"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xvc-7d-SnZ" secondAttribute="bottom" constant="-8" id="pVc-c4-kEz"/>
+                                        <constraint firstItem="xvc-7d-SnZ" firstAttribute="trailing" secondItem="JLX-Es-f4L" secondAttribute="trailingMargin" id="vBy-uR-tbS"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="headerLabel" destination="xvc-7d-SnZ" id="dmD-Nq-9pR"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="asa-Mn-m1g" id="ajB-fa-fJw"/>
