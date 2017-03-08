@@ -6,127 +6,127 @@
         "name":"Potato",
         "shelfLife":"21",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/01/18/32/potato-23910_150.png",
-      }
+      },
       {
         "name":"Tomato",
         "shelfLife":"14",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/18/19/tomato-153272_150.png",
-      }
+      },
       {
         "name":"Corn",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/17/20/corn-152037_150.png",
-      }
+      },
       {
         "name":"Onion",
         "shelfLife":"31",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/21/23/59/onion-576534_150.png",
-      }
+      },
       {
         "name":"Lettuce",
         "shelfLife":"5",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/21/23/53/leaf-576272_150.png",
-      }
+      },
       {
         "name":"Cucumber",
         "shelfLife":"7",
         "imageURL":"https://cdn.pixabay.com/photo/2016/03/31/22/02/cucumber-1296794_150.png",
-      }
+      },
       {
         "name":"Bell Pepper",
         "shelfLife":"14",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/12/01/bell-pepper-145103_150.png",
-      }
+      },
       {
         "name":"Carrot",
         "shelfLife":"31",
         "imageURL":"https://cdn.pixabay.com/photo/2016/04/01/12/10/carrot-1300572_150.png",
-      }
+      },
       {
         "name":"Cabbage",
         "shelfLife":"21",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/07/17/12/cabbage-559887_150.png",
-      }
+      },
       {
         "name":"Broccoli",
         "shelfLife":"10",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/21/23/30/broccoli-575500_150.png",
-      }
+      },
       {
         "name":"Green Beans",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/18/14/38/green-37220_150.png",
-      }
+      },
       {
         "name":"Celery",
         "shelfLife":"21",
         "imageURL":"https://cdn.pixabay.com/photo/2014/04/03/11/36/celery-311953_150.png",
-      }
+      },
       {
         "name":"Pumpkin",
         "shelfLife":"124",
         "imageURL":"https://cdn.pixabay.com/photo/2016/04/01/11/07/pumpkin-1300201_150.png",
-      }
+      },
       {
         "name":"Squash",
         "shelfLife":"62",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/13/17/06/vegetable-32901_150.png",
-      }
+      },
       {
         "name":"Mushrooms",
         "shelfLife":"8",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/21/23/57/mushroom-576462_150.png",
-      }
+      },
       {
         "name":"Spinach",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/22/00/05/green-576756_150.png",
-      }
+      },
       {
         "name":"Garlic",
         "shelfLife":"155",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/13/19/garlic-146810_150.png",
-      }
+      },
       {
         "name":"Cauliflower",
         "shelfLife":"14",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/18/20/49/cauliflower-37841_150.png",
-      }
+      },
       {
         "name":"Asparagus",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/13/17/11/asparagus-32916_150.png",
-      }
+      },
       {
         "name":"Eggplant",
         "shelfLife":"4",
         "imageURL":"https://cdn.pixabay.com/photo/2014/04/03/09/58/eggplant-309459_150.png",
-      }
+      },
       {
         "name":"Radishes",
         "shelfLife":"4",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/22/00/02/radish-576640_150.png",
-      }
+      },
       {
         "name":"Brussel Sprouts",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/22/00/03/bag-576696_150.png",
-      }
+      },
       {
         "name":"Kale",
         "shelfLife":"10",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/18/14/35/chard-37215_150.png",
-      }
+      },
       {
         "name":"Peas",
         "shelfLife":"2",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/21/23/40/peas-575815_150.png",
-      }
+      },
       {
         "name":"Zucchini",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/18/14/34/courgette-37213_150.png",
-      }
+      },
 
     ],
     "Fruit":[
@@ -134,123 +134,123 @@
         "name":"Apple",
         "shelfLife":"31",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/13/11/34/apple-158419_150.png",
-      }
+      },
       {
         "name":"Banana",
         "shelfLife":"7",
         "imageURL":"https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_150.png",
-      }
+      },
       {
         "name":"Pineapple",
         "shelfLife":"3",
         "imageURL":"https://cdn.pixabay.com/photo/2014/03/24/17/19/pineapple-295366_150.png",
-      }
+      },
       {
         "name":"Avocado",
         "shelfLife":"4",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/14/13/28/avocado-33935_150.png",
-      }
+      },
       {
         "name":"Strawberries",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2014/03/27/14/48/strawberries-299525_150.png",
-      }
+      },
       {
         "name":"Blueberries",
         "shelfLife":"7",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/12/20/03/berries-30430_150.png",
-      }
+      },
       {
         "name":"Blackberries",
         "shelfLife":"3",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/13/16/raspberry-146739_150.png",
-      }
+      },
       {
         "name":"Plum",
         "shelfLife":"3",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/12/12/03/plum-29713_150.png",
-      }
+      },
       {
         "name":"Peach",
         "shelfLife":"21",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/05/00/31/peaches-25334_150.png",
-      }
+      },
       {
         "name":"Pear",
         "shelfLife":"4",
         "imageURL":"https://cdn.pixabay.com/photo/2016/03/31/21/24/eat-1296402_150.png",
-      }
+      },
       {
         "name":"Kiwi",
         "shelfLife":"10",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/26/14/07/kiwi-42561_150.png",
-      }
+      },
       {
         "name":"Watermelon",
         "shelfLife":"12",
         "imageURL":"https://cdn.pixabay.com/photo/2017/01/13/02/43/food-1976177_150.png",
-      }
+      },
       {
         "name":"Pomegranate",
         "shelfLife":"6",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/15/39/pomegranate-150255_150.png",
-      }
+      },
       {
         "name":"Orange",
         "shelfLife":"21",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/26/12/52/orange-42395_150.png",
-      }
+      },
       {
         "name":"Mandarin",
         "shelfLife":"10",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/16/59/tangerine-151616_150.png",
-      }
+      },
       {
         "name":"Lemon",
         "shelfLife":"21",
         "imageURL":"https://cdn.pixabay.com/photo/2016/04/01/10/07/citrus-1299776_150.png",
-      }
+      },
       {
         "name":"Lime",
         "shelfLife":"31",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/05/00/27/lime-25314_150.png",
-      }
+      },
       {
         "name":"Mango",
         "shelfLife":"5",
         "imageURL":"https://cdn.pixabay.com/photo/2014/04/02/10/43/mango-304315_150.png",
-      }
+      },
       {
         "name":"Cantaloupe",
         "shelfLife":"5",
         "imageURL":"https://cdn.pixabay.com/photo/2014/04/03/10/40/cantaloupe-311084_150.png",
-      }
+      },
       {
         "name":"Coconut",
         "shelfLife":"12",
         "imageURL":"https://cdn.pixabay.com/photo/2014/12/21/23/39/coconuts-575780_150.png",
-      }
+      },
       {
         "name":"Cherries",
         "shelfLife":"5",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/15/20/53/cherry-35288_150.png",
-      }
+      },
       {
         "name":"Figs",
         "shelfLife":"5",
         "imageURL":"https://cdn.pixabay.com/photo/2012/04/26/19/37/fig-42900_150.png",
-      }
+      },
       {
         "name":"Grapes",
         "shelfLife":"5",
         "imageURL":"https://cdn.pixabay.com/photo/2016/04/01/12/19/bunch-of-grapes-1300662_150.png",
-      }
+      },
       {
         "name":"Grapefruit",
         "shelfLife":"10",
         "imageURL":"https://cdn.pixabay.com/photo/2013/07/12/19/16/grapefruit-154469_150.png",
       }
     ]
-  }
+  },
   
 }

@@ -10,11 +10,15 @@ import UIKit
 
 class Vegetable: Food {
     
+    override init() {
+        
+        super.init()
+        
+    }
     
-    override init(name:String, shelfLife:Int, URL:URL) {
+    override init(name:String, shelfLife:Int, imageURLString:String) {
 
-        super.init(name:name, shelfLife:shelfLife, URL:URL)
-        self.foodType = "Vegetable"
+        super.init(name:name, shelfLife:shelfLife, imageURLString:imageURLString)
 
     }
 

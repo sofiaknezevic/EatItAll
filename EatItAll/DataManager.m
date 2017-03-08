@@ -12,7 +12,7 @@
 @implementation DataManager
 
 
-+ (id)deafultManager {
++ (id)defaultManager {
     static DataManager *sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -24,8 +24,8 @@
 }
 -(void)setupJSONDataSource{
     
-    NSMutableDictionary<NSString*,NSArray<Food*>*>* tempDictionary;
-    NSMutableArray<NSString*>* foodArray;
+    NSMutableDictionary<NSString*,NSArray*>* tempDictionary = [[NSMutableDictionary alloc] init];
+    NSMutableArray<NSString*>* foodArray = [[NSMutableArray alloc] init];
     
     NSString *pathForJSON = [[NSBundle mainBundle] pathForResource:@"FoodInfo" ofType:@"JSON"];
     NSData* data = [[NSFileManager defaultManager] contentsAtPath:pathForJSON];
@@ -34,37 +34,42 @@
     [jsonDictionary[@"Food"] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         [foodArray addObject:key];
-        NSMutableArray* tempArray;
+        NSMutableArray* tempArray = [[NSMutableArray alloc] init];
         for(NSDictionary* food in obj ){
             if([key isEqualToString:@"Vegetables"]){
-                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]URL:[NSURL URLWithString:food[@"imageURL"]]];
+                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageURLString:food[@"imageURL"]];
         //  insert network manager local rep logic for imageurl
 
                 [tempArray addObject:veggie];
             }else if ([key isEqualToString:@"Fruit"]){
-                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]URL:[NSURL URLWithString:food[@"imageURL"]]];
+                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageURLString:food[@"imageURL"]];
         //  insert network manager  local rep logic for imageurl
                 
                 [tempArray addObject:fruit];
             }
         }
         [tempDictionary setObject:tempArray forKey:key];
-
+        self.foodTypeArray = foodArray;
+        self.JSONDataSource = tempDictionary;
+        
     }];
-    self.foodTypeArray = foodArray;
-    self.JSONDataSource = tempDictionary;
+
     
 }
 
 -(void)setupUserDataSource{
     
-    NSMutableDictionary<NSString*,NSArray<Food*>*>* tempDictionary;
+    NSMutableDictionary<NSString*,NSArray<UserFood*>*>* tempDictionary;
     [tempDictionary setNilValueForKey:@"About to expire"];
+    
+    for (NSString* key in self.foodTypeArray) {
+        [tempDictionary setNilValueForKey:key];
+
+    }
     
 
     
 }
-    
 
 
 @end

@@ -13,9 +13,12 @@
 
 @interface DataManager : NSObject
 
-@property NSMutableDictionary<NSString*,NSArray<Food*>*>* JSONDataSource;
+@property NSMutableDictionary<NSString*,NSArray*>* JSONDataSource;
 @property NSMutableArray<NSString*>* foodTypeArray;
 @property NSMutableDictionary<NSString*,NSArray<UserFood*>*>* userDataSource;
+
++ (id)defaultManager;
+
 
 
 @end

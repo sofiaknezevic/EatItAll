@@ -18,14 +18,17 @@ class AddCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    
-    func configureCellWithFood(food:Food) -> Void {
+    func configureCell(food:Food) -> Void {
+        
+        //change to incorporate images correctly
         
         self.foodLabel.text = food.name
         
-        let imageData:Data = try! Data (contentsOf: food.imageURL)
         
-        self.foodImageView.image = UIImage (data: imageData)
+        
+        //let imageData:Data? = try? Data (contentsOf: food.imageURL)
+        
+        //self.foodImageView.image = UIImage (data: imageData!)
         
     }
 

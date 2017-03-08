@@ -7,20 +7,27 @@
 //
 
 import UIKit
+import Realm
 
-class Food: NSObject {
+class Food: RLMObject {
     
-    let name: String
-    let shelfLife: Int
-    var foodType: String?
-    let imageURL: URL
+    var name: String!
+    var shelfLife: Int!
+    var imageURLString: String!
     
-
-    init(name:String, shelfLife:Int, URL: URL) {
+    override init() {
+        
+        super.init()
+        
+    }
+    
+    
+    init(name:String, shelfLife:Int, imageURLString: String) {
         
         self.name = name
         self.shelfLife = shelfLife
-        self.imageURL = URL
+        self.imageURLString = imageURLString
+        
         super.init()
         
     }
