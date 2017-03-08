@@ -24,12 +24,12 @@
     return 1;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     StatusTableViewCell *cell = [self.statusTableView dequeueReusableCellWithIdentifier:kStatusCellIdentifier forIndexPath:indexPath];
     
-    [cell setSelected:YES animated:YES];
-    
+    [cell configureCell];
     //access the array?? or some sort of data in order to set this cell properly
     
     return cell;

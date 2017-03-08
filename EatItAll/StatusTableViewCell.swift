@@ -10,6 +10,13 @@ import UIKit
 
 class StatusTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var foodImageView: UIImageView!
+    @IBOutlet weak var foodNameLabel: UILabel!
+    
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var daysLeftLabel: UILabel!
+    var userFood:UserFood!
+    var daysLeft:NSInteger!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -20,5 +27,15 @@ class StatusTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state!!!!! FROM WHEREE ALIFIA!?!
     }
+    func configureCell() {
+        self.daysLeft = NSInteger(self.userFood.expiryDate.timeIntervalSinceNow)
+        self.setupProgressBar()
+    }
+    
+    func setupProgressBar() {
+        let progress = Float(self.daysLeft) / Float(userFood.food.shelfLife)             
 
+        self.progressBar.setProgress(Float(progress), animated: true)
+    }
+    
 }

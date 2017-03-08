@@ -22,8 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSs-Zz-ddu">
+                                <rect key="frame" x="154" y="580" width="67" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="asa-Mn-m1g" eventType="touchUpInside" id="n5i-fq-p1e"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vro-aE-CiQ" userLabel="Food Collection View">
-                                <rect key="frame" x="8" y="28" width="359" height="590"/>
+                                <rect key="frame" x="8" y="60" width="359" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YAg-6h-Lkk">
                                     <size key="itemSize" width="101" height="100"/>
@@ -92,21 +99,25 @@
                                     <outlet property="delegate" destination="asa-Mn-m1g" id="Wr0-u1-hpp"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSs-Zz-ddu">
-                                <rect key="frame" x="154" y="580" width="67" height="30"/>
-                                <state key="normal" title="Save"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMU-vg-aDS">
+                                <rect key="frame" x="105" y="28" width="165" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Vegetables"/>
+                                    <segment title="Fruit"/>
+                                </segments>
                                 <connections>
-                                    <action selector="saveButtonClicked:" destination="asa-Mn-m1g" eventType="touchUpInside" id="n5i-fq-p1e"/>
+                                    <action selector="segmentChanged:" destination="asa-Mn-m1g" eventType="valueChanged" id="WFk-uz-hld"/>
                                 </connections>
-                            </button>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="RSs-Zz-ddu" secondAttribute="trailing" constant="138" id="3bJ-22-AZw"/>
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="trailing" secondItem="0tY-sN-Fg8" secondAttribute="trailingMargin" constant="8" id="GdH-uI-qyG"/>
-                            <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="vro-aE-CiQ" secondAttribute="bottom" id="PAE-mU-det"/>
+                            <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="vro-aE-CiQ" secondAttribute="bottom" constant="46" id="PAE-mU-det"/>
                             <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="RSs-Zz-ddu" secondAttribute="bottom" constant="8" id="Z06-3n-Dg7"/>
-                            <constraint firstItem="vro-aE-CiQ" firstAttribute="top" secondItem="HXu-KQ-Sj7" secondAttribute="bottom" constant="8" id="ZRd-sM-nrF"/>
+                            <constraint firstItem="vro-aE-CiQ" firstAttribute="top" secondItem="HXu-KQ-Sj7" secondAttribute="bottom" constant="40" id="ZRd-sM-nrF"/>
                             <constraint firstItem="RSs-Zz-ddu" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="mba-2q-y8a"/>
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="oPW-92-fTa"/>
                         </constraints>

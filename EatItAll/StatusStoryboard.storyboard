@@ -25,40 +25,44 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="590"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="statusCell" rowHeight="46" id="ZrV-9s-Arc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="statusCell" rowHeight="46" id="ZrV-9s-Arc" customClass="StatusTableViewCell" customModule="EatItAll" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZrV-9s-Arc" id="4hv-Dp-mxh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C81-cg-Brb">
-                                                    <rect key="frame" x="8" y="0.0" width="100" height="45.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="Yjd-Cc-eII"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-tO-Pzk">
+                                                    <rect key="frame" x="8" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqm-85-DX8">
+                                                    <rect key="frame" x="66" y="0.0" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-Yl-kPO">
-                                                    <rect key="frame" x="108" y="8.5" width="259" height="28.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="HL9-7V-73r">
+                                                    <rect key="frame" x="66" y="29" width="271" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="progressTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWw-vR-lvB">
+                                                    <rect key="frame" x="281" y="0.0" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="hl7-Yl-kPO" secondAttribute="bottom" constant="8" id="ARE-B9-cp1"/>
-                                                <constraint firstItem="hl7-Yl-kPO" firstAttribute="leading" secondItem="C81-cg-Brb" secondAttribute="trailing" id="Gqr-iA-p8E"/>
-                                                <constraint firstItem="C81-cg-Brb" firstAttribute="top" secondItem="4hv-Dp-mxh" secondAttribute="top" id="RXe-hp-oa0"/>
-                                                <constraint firstAttribute="trailing" secondItem="hl7-Yl-kPO" secondAttribute="trailing" constant="8" id="akk-Rn-wdN"/>
-                                                <constraint firstItem="C81-cg-Brb" firstAttribute="leading" secondItem="4hv-Dp-mxh" secondAttribute="leading" constant="8" id="ggg-yt-4XI"/>
-                                                <constraint firstItem="hl7-Yl-kPO" firstAttribute="centerY" secondItem="4hv-Dp-mxh" secondAttribute="centerY" id="kRL-34-htP"/>
-                                                <constraint firstItem="C81-cg-Brb" firstAttribute="centerY" secondItem="4hv-Dp-mxh" secondAttribute="centerY" id="vHO-za-it4"/>
-                                                <constraint firstItem="hl7-Yl-kPO" firstAttribute="leading" secondItem="C81-cg-Brb" secondAttribute="trailing" id="zSi-Td-111"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="daysLeftLabel" destination="uWw-vR-lvB" id="wxL-on-hUP"/>
+                                            <outlet property="foodImageView" destination="JVz-tO-Pzk" id="Ecv-hW-XQf"/>
+                                            <outlet property="foodNameLabel" destination="bqm-85-DX8" id="p4q-tG-Vml"/>
+                                            <outlet property="progressBar" destination="HL9-7V-73r" id="Qba-fN-gNj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
