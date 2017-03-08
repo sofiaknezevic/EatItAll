@@ -10,6 +10,8 @@ import UIKit
 
 class Fruit: Food {
 
+    var imageName: String?
+
     override init() {
         
         super.init()
