@@ -10,7 +10,27 @@ import UIKit
 
 class NetworkManager: NSObject {
 
-    func localImageURLfrom(URL:URL) -> URL? {
-        return nil
+    func imageDatafrom(URL:URL) -> Data? {
+        
+        var imageData:Data?
+        let fileManager = FileManager.default
+        let downloadRequest = URLRequest.init(url: URL)
+        let session = URLSession.shared.downloadTask(with: downloadRequest) { (location:URL? , response:URLResponse?, error:Error?) in
+            
+            if let error = error{
+                print("\(error)")
+                return
+            }
+            
+            let locationString = "\(location)"
+            
+            imageData = fileManager.contents(atPath:locationString)!
+            
+        }
+        session.resume()
+        guard let returnData = imageData else{
+            return nil
+        }
+        return returnData
     }
 }
