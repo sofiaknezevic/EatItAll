@@ -13,7 +13,7 @@ class Food: RLMObject {
     
     var name: String!
     var shelfLife: Int!
-    var imageURLString: String!
+    var imageName: String!
     
     override init() {
         
@@ -22,12 +22,11 @@ class Food: RLMObject {
     }
     
     
-    init(name:String, shelfLife:Int, imageURLString: String) {
+    init(name:String, shelfLife:Int, imageName: String) {
         
         self.name = name
         self.shelfLife = shelfLife
-        self.imageURLString = imageURLString
-        
+        self.imageName = imageName
         super.init()
         
     }

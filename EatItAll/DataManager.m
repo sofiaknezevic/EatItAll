@@ -38,12 +38,12 @@
         NSMutableArray* tempArray = [[NSMutableArray alloc] init];
         for(NSDictionary* food in obj ){
             if([key isEqualToString:@"Vegetables"]){
-                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageURLString:food[@"imageURL"]];
+                Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"]];
 
                 
                 [tempArray addObject:veggie];
             }else if ([key isEqualToString:@"Fruit"]){
-                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageURLString:food[@"imageURL"]];
+                Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:[food[@"shelfLife"] intValue]imageName:food[@"imageName"]];
 
                 [tempArray addObject:fruit];
             }

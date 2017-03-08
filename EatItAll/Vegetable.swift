@@ -10,7 +10,6 @@ import UIKit
 
 class Vegetable: Food {
     
-    var imageName:String?
 
     
     override init() {
@@ -19,9 +18,9 @@ class Vegetable: Food {
         
     }
     
-    override init(name:String, shelfLife:Int, imageURLString:String) {
+    override init(name:String, shelfLife:Int, imageName:String) {
 
-        super.init(name:name, shelfLife:shelfLife, imageURLString:imageURLString)
+        super.init(name:name, shelfLife:shelfLife, imageName:imageName)
 
     }
 

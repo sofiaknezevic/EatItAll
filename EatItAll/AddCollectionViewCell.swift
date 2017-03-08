@@ -26,7 +26,7 @@ class AddCollectionViewCell: UICollectionViewCell {
         
         //let imageData:Data? = try? Data (contentsOf: food.imageURL)
         
-        //self.foodImageView.image = UIImage (data: imageData!)
+        self.foodImageView.image = UIImage.init(named:food.imageName)
         
         
 
