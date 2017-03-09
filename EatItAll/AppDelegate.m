@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DataManager.h"
+#import "NotificationManager.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,7 @@
 
     
     [DataManager defaultManager];
+    [NotificationManager notificationManager];
     
     return YES;
 }
