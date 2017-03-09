@@ -103,8 +103,8 @@
                                 <rect key="frame" x="105" y="28" width="165" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Vegetables"/>
                                     <segment title="Fruit"/>
+                                    <segment title="Vegetables"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentChanged:" destination="asa-Mn-m1g" eventType="valueChanged" id="WFk-uz-hld"/>
@@ -126,6 +126,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="foodCollectionView" destination="vro-aE-CiQ" id="meF-C6-KkG"/>
+                        <outlet property="foodSegment" destination="LMU-vg-aDS" id="Llw-9b-8CD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRz-Ae-6Px" userLabel="First Responder" sceneMemberID="firstResponder"/>

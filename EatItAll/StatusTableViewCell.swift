@@ -28,12 +28,12 @@ class StatusTableViewCell: UITableViewCell {
         // Configure the view for the selected state!!!!! FROM WHEREE ALIFIA!?!
     }
     func configureCell() {
-        self.daysLeft = NSInteger(self.userFood.expiryDate.timeIntervalSinceNow)
+   //     self.daysLeft = NSInteger(self.userFood.expiryDate.timeIntervalSinceNow)
         self.setupProgressBar()
     }
     
     func setupProgressBar() {
-        let progress = Float(self.daysLeft) / Float(userFood.food.shelfLife)             
+        let progress = 0.5 // Float(self.daysLeft) / Float(userFood.food.shelfLife)!
 
         self.progressBar.setProgress(Float(progress), animated: true)
     }

@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *foodCollectionView;
 @property (nonatomic, strong) NSMutableArray *userFoodsArray;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *foodSegment;
+@property (nonatomic) RLMResults* realmResults;
 
 
 @end
@@ -34,12 +36,16 @@
     self.userFoodsArray = [[NSMutableArray alloc] init];
     
     self.dataManager = [DataManager defaultManager];
+    
+    [self updateRealmResults];
 }
+
+#pragma mark - CollectionViewDataSource -
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return [self.dataManager.JSONDataSource objectForKey:self.dataManager.foodTypeArray[section]].count;
+    return self.realmResults.count;
     
 }
 
@@ -47,9 +53,9 @@
 {
     AddCollectionViewCell *cell = [self.foodCollectionView dequeueReusableCellWithReuseIdentifier:kFoodCellIdentifier forIndexPath:indexPath];
     
-    NSString* key = self.dataManager.foodTypeArray[indexPath.section];
     
-    [cell configureCellWithFood:[self.dataManager.JSONDataSource objectForKey:key][indexPath.row]];
+    [cell configureCellWithFood:[self.realmResults objectAtIndex:indexPath.row]];
+    cell.backgroundColor = [UIColor redColor];
     
     return cell;
     
@@ -58,9 +64,10 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     
-    return [self.dataManager.foodTypeArray count];
+    return 1;
     
 }
+#pragma mark - CollectionViewDelegate -
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -74,6 +81,8 @@
     
     
 }
+
+
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -89,11 +98,13 @@
     
     HeaderCollectionReusableView *headerView = [self.foodCollectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kFoodHeaderIdentifier forIndexPath:indexPath];
 
-    [headerView configureHeaderWithFoodType:self.dataManager.foodTypeArray[indexPath.section]];
+    [headerView configureHeaderWithFoodType:self.dataManager.foodTypeArray[self.foodSegment.selectedSegmentIndex]];
     
     return headerView;
     
 }
+
+#pragma mark - User Input -
 
 - (IBAction)saveButtonClicked:(id)sender {
     
@@ -106,8 +117,22 @@
 }
 - (IBAction)segmentChanged:(id)sender {
     
+    [self updateRealmResults];
+    [self.foodCollectionView reloadData];
 }
 
-
+-(void)updateRealmResults{
+    NSString* foodTypeToDisplay = self.dataManager.foodTypeArray[self.foodSegment.selectedSegmentIndex];
+    
+    if([foodTypeToDisplay isEqualToString:@"Vegetables"]){
+        
+        RLMResults<Vegetable*>* vegetables = [Vegetable allObjects];
+        self.realmResults = vegetables;
+    }
+    else if ([foodTypeToDisplay isEqualToString:@"Fruit"]){
+        RLMResults<Fruit*>* fruit = [Fruit allObjects];
+        self.realmResults = fruit;
+    }
+}
 
 @end
