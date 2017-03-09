@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class Food;
-@class UserFood;
-@class RLMResults;
+#import "EatItAll-Swift.h"
 
 @interface DataManager : NSObject
 
@@ -19,6 +16,7 @@
 @property NSMutableDictionary<NSString*,NSMutableArray<UserFood*>*>* userDataSource;
 @property NSMutableArray<NSString*>* statusSectionsArray;
 
+@property (nonatomic, strong) RLMRealm *theRealm;
 
 
 @property BOOL toImportOrNotToImport;

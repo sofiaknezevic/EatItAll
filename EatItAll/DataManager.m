@@ -8,11 +8,11 @@
 
 #import "DataManager.h"
 #import "ExpiryDateManager.h"
-#import "EatItAll-Swift.h"
+
 
 @interface DataManager()
 
-@property (nonatomic, strong) RLMRealm *theRealm;
+
 @property (nonatomic, strong) ExpiryDateManager *expiryManager;
 
 @end
@@ -112,15 +112,17 @@
 
 }
 
--(void)insertUserFoodArrayToDataSourceWithArray:(NSArray*)foodArrayFromUser {
+-(void)insertUserFoodArrayToDataSourceWithArray:(NSMutableArray*)foodArrayFromUser {
 
     for (Food* food in foodArrayFromUser) {
+        
         UserFood* userFood =[[UserFood alloc] initWithCreationDate:[NSDate date] food:food];
         
             [self.theRealm transactionWithBlock:^{
                 
                 [self.theRealm addObject:userFood];
             }];
+        
     }
 }
 

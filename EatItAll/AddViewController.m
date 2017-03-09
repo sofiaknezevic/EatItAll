@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) DataManager *dataManager;
 @property (weak, nonatomic) IBOutlet UICollectionView *foodCollectionView;
-@property (nonatomic, strong) NSMutableArray *userFoodsArray;
+@property (nonatomic) NSMutableArray *userFoodsArray;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *foodSegment;
 @property (nonatomic) RLMResults* realmResults;
@@ -72,16 +72,12 @@
 {
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.alpha = 0.5;
-    Food *newFood;
-    if(self.foodSegment.selectedSegmentIndex){
-        RLMResults* veggies = [Vegetable allObjects];
-       newFood = [veggies objectAtIndex:indexPath.row];
-    }else{
-        RLMResults* fruit = [Fruit allObjects];
-        newFood = [fruit objectAtIndex:indexPath.row];
-    }
+    
+
+    Food *newFood = [self.realmResults objectAtIndex:indexPath.row];
 
     [self.userFoodsArray addObject:newFood];
+    
     
 }
 
@@ -89,12 +85,31 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *key = self.dataManager.foodTypeArray[indexPath.section];
+    
     UICollectionViewCell  * cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.alpha = 1;
     
-    Food *newFood = [self.dataManager.JSONDataSource objectForKey:key][indexPath.row];
-    [self.userFoodsArray removeObject:newFood];
+    Food *removeFood = [self.realmResults objectAtIndex:indexPath.row];
+    
+    Food *foodToDelete;
+    for (Food *food in self.userFoodsArray) {
+        if (food.name == removeFood.name) {
+            foodToDelete = food;
+            break;
+        }
+    }
+    
+    [self.userFoodsArray removeObject:foodToDelete];
+    
+    [self.dataManager.theRealm transactionWithBlock:^{
+        
+        
+        [self.dataManager.theRealm deleteObject:removeFood];
+        
+        
+    }];
+    
+    
     
 }
 
@@ -113,8 +128,9 @@
 
 - (IBAction)saveButtonClicked:(id)sender {
     
-    
+
     [self.dataManager insertUserFoodArrayToDataSourceWithArray:self.userFoodsArray];
+    [self.userFoodsArray removeAllObjects];
  
     
     
@@ -134,6 +150,7 @@
         self.realmResults = vegetables;
     }
     else if ([foodTypeToDisplay isEqualToString:@"Fruit"]){
+        
         RLMResults<Fruit*>* fruit = [Fruit allObjects];
         self.realmResults = fruit;
     }
