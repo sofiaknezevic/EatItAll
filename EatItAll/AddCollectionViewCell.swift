@@ -19,10 +19,10 @@ class AddCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(food:Food) -> Void {
-        let tempName = food.name
-        self.foodLabel.text = tempName
         
-    //    self.foodImageView.image = UIImage.init(named:food.imageName)
+        self.foodLabel.text = food.name
+        
+        self.foodImageView.image = UIImage.init(named:food.imageName)
 
     }
 

@@ -11,15 +11,15 @@ import Realm
 
 class UserFood: RLMObject {
     
-    var creationDate: Date!
+    dynamic var creationDate: Date!
     
-    var expiryDate: Date {
+    dynamic var expiryDate: Date {
         //deal with food.shelfLife being a string
         return makeExpiryDate(creationDate:creationDate,shelfLife:Double(food.shelfLife)!)
         
     }
     
-    var food: Food!
+    dynamic var food: Food!
     
     override init() {
         
