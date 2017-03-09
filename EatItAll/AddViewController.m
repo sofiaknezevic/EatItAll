@@ -115,8 +115,7 @@
     
     
     [self.dataManager insertUserFoodArrayToDataSourceWithArray:self.userFoodsArray];
-    
-    NSLog(@"%@", self.userFoodsArray);
+ 
     
     
 }

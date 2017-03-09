@@ -36,7 +36,6 @@
             
         }
         
-        NSLog(@"%@", userFoods.expiryDate);
         
     }
     

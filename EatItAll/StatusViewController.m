@@ -52,11 +52,11 @@
 {
     StatusTableViewCell *cell = [self.statusTableView dequeueReusableCellWithIdentifier:kStatusCellIdentifier forIndexPath:indexPath];
     UserFood *newUserFood;
-    if(indexPath.section == 0 ){
+    if(indexPath.section == 0){
         NSMutableArray* aboutToExpire = [self.dataManager filterUserFoodsByExpiryDate];
         newUserFood = [aboutToExpire objectAtIndex:indexPath.row];
     }
-    else{
+    else if(indexPath.section == 1 || indexPath.section == 2){
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"food.groupName = '%@'",self.dataManager.statusSectionsArray[indexPath.section]];
     RLMResults<UserFood *> *userResults = [UserFood objectsWithPredicate:predicate];
