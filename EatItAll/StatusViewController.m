@@ -82,7 +82,7 @@
         
      
     }
-    [cell configureCellWithFood:newUserFood.food];
+    [cell configureCellWithUserFood:newUserFood];
     
     return cell;
     
