@@ -29,5 +29,7 @@ class AddCollectionViewCell: UICollectionViewCell {
         foodImageView.layer.cornerRadius = foodImageView.frame.height/2
         foodImageView.clipsToBounds = true
     }
+    
 
+    
 }

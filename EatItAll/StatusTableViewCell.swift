@@ -24,11 +24,7 @@ class StatusTableViewCell: UITableViewCell {
         
     }
 
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state!!!!! FROM WHEREE ALIFIA!?!
-//    }
+
     
     func configureCell(userFood:UserFood) -> Void {
 

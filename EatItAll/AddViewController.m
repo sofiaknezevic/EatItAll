@@ -44,17 +44,16 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    
     return self.realmResults.count;
-    
 }
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     AddCollectionViewCell *cell = [self.foodCollectionView dequeueReusableCellWithReuseIdentifier:kFoodCellIdentifier forIndexPath:indexPath];
     
-    
     [cell configureCellWithFood:[self.realmResults objectAtIndex:indexPath.row]];
+    cell.alpha = 1;
     
     return cell;
     
@@ -62,10 +61,10 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    
     return 1;
-    
 }
+
+
 #pragma mark - CollectionViewDelegate -
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -75,12 +74,10 @@
     
 
     Food *newFood = [self.realmResults objectAtIndex:indexPath.row];
-
     [self.userFoodsArray addObject:newFood];
     
     
 }
-
 
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -92,8 +89,11 @@
     Food *removeFood = [self.realmResults objectAtIndex:indexPath.row];
     
     Food *foodToDelete;
+    
     for (Food *food in self.userFoodsArray) {
-        if (food.name == removeFood.name) {
+        
+        if ([food isEqualToObject:removeFood]) {
+            
             foodToDelete = food;
             break;
         }
@@ -101,13 +101,13 @@
     
     [self.userFoodsArray removeObject:foodToDelete];
     
-    [self.dataManager.theRealm transactionWithBlock:^{
-        
-        
-        [self.dataManager.theRealm deleteObject:removeFood];
-        
-        
-    }];
+//    [self.dataManager.theRealm transactionWithBlock:^{
+//        
+//        
+//        [self.dataManager.theRealm deleteObject:foodToDelete];
+//        
+//        
+//    }];
     
     
     
@@ -131,6 +131,7 @@
 
     [self.dataManager insertUserFoodArrayToDataSourceWithArray:self.userFoodsArray];
     [self.userFoodsArray removeAllObjects];
+//    NSArray* self.foodCollectionView indexPathsForSelectedItems
  
     
     
@@ -138,7 +139,13 @@
 - (IBAction)segmentChanged:(id)sender {
     
     [self updateRealmResults];
-    [self.foodCollectionView reloadData];
+    [UIView transitionWithView: self.foodCollectionView
+                                duration: 0.75f
+                                options: UIViewAnimationOptionTransitionCrossDissolve
+                                animations: ^(void){
+                                    [self.foodCollectionView reloadData];}
+                                completion: nil];
+
 }
 
 -(void)updateRealmResults{
