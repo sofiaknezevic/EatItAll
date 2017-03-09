@@ -41,13 +41,16 @@
     
     RLMResults<UserFood *> *userResults = [UserFood allObjects];
     UserFood *newUserFood = [userResults objectAtIndex:indexPath.row];
-  
+    NSLog(@"%@",newUserFood.expiryDate);
     [cell configureCellWithFood:newUserFood.food];
     
     return cell;
     
-    
-    
-    
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 3;
+}
+
 @end

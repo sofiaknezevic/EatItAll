@@ -117,7 +117,6 @@
                 
                 [self.theRealm addObject:userFood];
             }];
-
     }
 }
 

@@ -16,6 +16,8 @@ class StatusTableViewCell: UITableViewCell {
     
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var daysLeftLabel: UILabel!
+    
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,14 +35,17 @@ class StatusTableViewCell: UITableViewCell {
 
         
         self.foodNameLabel.text = food.name
-        self.setupProgressBar()
+        self.foodImageView.image = UIImage.init(named:food.imageName)
+        self.setupProgressBar(food: food)
     }
 
 
-    func setupProgressBar() {
-//        let progress = Float(self.daysLeft) / Float(userFood.food.shelfLife)!
-//
-//        self.progressBar.setProgress(Float(progress), animated: true)
+    func setupProgressBar(food:Food) {
+        
+      
+        let progress = Float() / Float(food.shelfLife)!
+
+        self.progressBar.setProgress(Float(progress), animated: true)
     }
     
 }

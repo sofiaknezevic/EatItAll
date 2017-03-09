@@ -55,7 +55,6 @@
     
     
     [cell configureCellWithFood:[self.realmResults objectAtIndex:indexPath.row]];
-    cell.backgroundColor = [UIColor redColor];
     
     return cell;
     
@@ -71,7 +70,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.alpha = 0.5;
     NSString *key = self.dataManager.foodTypeArray[indexPath.section];
 
     
@@ -87,6 +87,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *key = self.dataManager.foodTypeArray[indexPath.section];
+    UICollectionViewCell  * cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.alpha = 1;
     
     Food *newFood = [self.dataManager.JSONDataSource objectForKey:key][indexPath.row];
     [self.userFoodsArray removeObject:newFood];
