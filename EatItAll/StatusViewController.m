@@ -28,6 +28,12 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self.statusTableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     RLMResults *userResults = [UserFood allObjects];
@@ -41,7 +47,7 @@
     
     RLMResults<UserFood *> *userResults = [UserFood allObjects];
     UserFood *newUserFood = [userResults objectAtIndex:indexPath.row];
-    NSLog(@"%@",newUserFood.expiryDate);
+    
     [cell configureCellWithFood:newUserFood.food];
     
     return cell;
@@ -50,7 +56,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 3;
+    return 1;
 }
 
 @end

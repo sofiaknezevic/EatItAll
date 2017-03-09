@@ -25,6 +25,7 @@
         sharedManager = [[self alloc] init];
         
         [sharedManager setupJSONDataSource];
+        [sharedManager sortUserFoods];
      
     });
     return sharedManager;
@@ -118,6 +119,45 @@
                 [self.theRealm addObject:userFood];
             }];
     }
+}
+
+-(void)sortUserFoods
+{
+    NSDate* currentDate = [NSDate date];
+    
+    RLMResults<UserFood*> *allUserFoods = [UserFood allObjects];
+    
+    for (UserFood *userFood in allUserFoods) {
+
+        NSLog(@"%@", currentDate);
+   
+        switch ([currentDate compare:userFood.expiryDate]) {
+            case NSOrderedAscending:
+                
+                NSLog(@"Today is less than expiry date");
+                
+                break;
+                
+            case NSOrderedDescending:
+                
+                NSLog(@"Expiry date is less than today");
+                
+                break;
+                
+            case NSOrderedSame:
+                
+                NSLog(@"Dates are the same");
+                
+                break;
+                
+            default:
+                break;
+        }
+        
+        NSLog(@"%@",userFood.expiryDate);
+        
+    }
+    
 }
 
 @end
