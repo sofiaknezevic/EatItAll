@@ -11,10 +11,10 @@ import Realm
 
 class Food: RLMObject {
     
-    var name: String!
-    var shelfLife: String!
-    var imageName: String!
-    var groupName: String!
+    dynamic var name: String!
+    dynamic var shelfLife: String!
+    dynamic var imageName: String!
+    dynamic var groupName: String!
     
     override init() {
         
