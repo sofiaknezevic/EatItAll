@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EatItAll-Swift.h"
 
 @interface ExpiryDateManager : NSObject
 
 
--(BOOL)sortDateForNotifications:(NSDate *)currentDate;
+-(BOOL)sortDateForNotifications:(NSDate *)currentDate andUserFoodDate:(UserFood *)userFoodDate;
 -(NSDate *)getRidOfTime:(NSDate *)passedInDate;
 -(NSDate *)addThreeDaysToDate:(NSDate *)currentDate;
 @end

@@ -18,43 +18,34 @@
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
         
-        [sharedManager setUpNotifications];
 
         
     });
     return sharedManager;
 }
 
-- (void)setUpNotifications
+
+
+- (NSMutableArray *)scheduleNotifications
 {
-    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    ExpiryDateManager *newManager = [[ExpiryDateManager alloc] init];
     
-    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        
-        if (granted) {
+    NSMutableArray *expiredUserFoods = [[NSMutableArray alloc] init];
+    
+    RLMResults *allUserFoods = [UserFood allObjects];
+    
+    for (UserFood *notificationForUserFood in allUserFoods) {
+
+        if([newManager sortDateForNotifications:[NSDate date] andUserFoodDate:notificationForUserFood]){
             
-            [self scheduleNotifications];
-            
-        }else{
-            
-            return;
+            [expiredUserFoods addObject:notificationForUserFood];
             
         }
         
-    }];
-}
-
-- (void)scheduleNotifications
-{
- 
-    ExpiryDateManager *newManager = [[ExpiryDateManager alloc] init];
-    
-    if ([newManager sortDateForNotifications:[NSDate date]] == YES) {
-        
-        NSLog(@"HERE'S YOUR NOTIFICATION!!!!");
-        
     }
-  
+    
+
+    return expiredUserFoods;
  
     
 }

@@ -7,39 +7,39 @@
 //
 
 #import "ExpiryDateManager.h"
-#import "EatItAll-Swift.h"
+
+
+@interface ExpiryDateManager()
+
+@property (nonatomic) BOOL toNotify;
+
+@end
 
 @implementation ExpiryDateManager
 
 
--(BOOL)sortDateForNotifications:(NSDate *)currentDate
+-(BOOL)sortDateForNotifications:(NSDate *)currentDate andUserFoodDate:(UserFood *)userFoodDate
 {
-    BOOL toNotify = NO;
-    
-    RLMResults *allUserFoods = [UserFood allObjects];
 
     NSDate *oneMoreDay = [self addOneDayToDate:currentDate];
     
     NSDate *realDate = [self getRidOfTime:oneMoreDay];
-    
-    for (UserFood *userFoods in allUserFoods) {
+
+    NSDate *userFoodExpiryDate = [self getRidOfTime:userFoodDate.expiryDate];
         
-        NSDate *userFoodDates = [self getRidOfTime:userFoods.expiryDate];
-        
-        if ([userFoodDates compare:realDate] == NSOrderedSame) {
+        if ([userFoodExpiryDate compare:realDate] == NSOrderedSame) {
             
-            toNotify = YES;
+            self.toNotify = YES;
             
         }else{
             
-            toNotify = NO;
+            self.toNotify = NO;
             
         }
         
-        
-    }
     
-    return toNotify;
+    
+    return self.toNotify;
     
 }
 

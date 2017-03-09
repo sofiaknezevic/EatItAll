@@ -13,4 +13,6 @@
 
 +(id)notificationManager;
 
+- (NSMutableArray *)scheduleNotifications;
+
 @end
