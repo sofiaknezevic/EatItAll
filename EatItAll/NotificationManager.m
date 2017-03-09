@@ -7,6 +7,8 @@
 //
 
 #import "NotificationManager.h"
+#import "EatItAll-Swift.h"
+#import "ExpiryDateManager.h"
 
 @implementation NotificationManager
 
@@ -44,7 +46,15 @@
 
 - (void)scheduleNotifications
 {
+ 
+    ExpiryDateManager *newManager = [[ExpiryDateManager alloc] init];
     
+    if ([newManager sortDateForNotifications:[NSDate date]] == YES) {
+        
+        NSLog(@"HERE'S YOUR NOTIFICATION!!!!");
+        
+    }
+  
  
     
 }
