@@ -30,20 +30,26 @@ class StatusTableViewCell: UITableViewCell {
 //        // Configure the view for the selected state!!!!! FROM WHEREE ALIFIA!?!
 //    }
     
-    func configureCell(food:Food) -> Void {
+    func configureCell(userFood:UserFood) -> Void {
 
 
         
-        self.foodNameLabel.text = food.name
-        self.foodImageView.image = UIImage.init(named:food.imageName)
-        self.setupProgressBar(food: food)
+        foodNameLabel.text = userFood.food.name
+        foodImageView.image = UIImage.init(named:userFood.food.imageName)
+        foodImageView.layer.borderWidth = 1
+        foodImageView.layer.masksToBounds = false
+        foodImageView.layer.borderColor = UIColor.magenta.cgColor
+        foodImageView.layer.cornerRadius = foodImageView.frame.height/2
+        foodImageView.clipsToBounds = true
+        self.setupProgressBar(userFood:userFood)
     }
 
 
-    func setupProgressBar(food:Food) {
+    func setupProgressBar(userFood:UserFood) {
         
-      
-        let progress = Float() / Float(food.shelfLife)!
+        let daysTillExpiry = Float(userFood.expiryDate.timeIntervalSince(Date.init()))/Float (86400)
+    
+        let progress = daysTillExpiry / Float(userFood.food.shelfLife)!
 
         self.progressBar.setProgress(Float(progress), animated: true)
     }
