@@ -7,21 +7,31 @@
 //
 
 #import "StatusViewController.h"
+#import "DataManager.h"
 #import "EatItAll-Swift.h"
 
 #define kStatusCellIdentifier @"statusCell"
 
 @interface StatusViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *statusTableView;
+@property (nonatomic, strong) DataManager *dataManager;
 
 @end
 
 @implementation StatusViewController
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.dataManager = [DataManager defaultManager];
+    
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    return 1;
+    RLMResults *userResults = [UserFood allObjects];
+    return userResults.count;
 }
 
 
@@ -29,10 +39,13 @@
 {
     StatusTableViewCell *cell = [self.statusTableView dequeueReusableCellWithIdentifier:kStatusCellIdentifier forIndexPath:indexPath];
     
-    [cell configureCell];
-    //access the array?? or some sort of data in order to set this cell properly
+    RLMResults<UserFood *> *userResults = [UserFood allObjects];
+    UserFood *newUserFood = [userResults objectAtIndex:indexPath.row];
+  
+    [cell configureCellWithFood:newUserFood.food];
     
     return cell;
+    
     
     
     

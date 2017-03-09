@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class StatusTableViewCell: UITableViewCell {
 
@@ -15,27 +16,29 @@ class StatusTableViewCell: UITableViewCell {
     
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var daysLeftLabel: UILabel!
-    var userFood:UserFood!
-    var daysLeft:NSInteger!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state!!!!! FROM WHEREE ALIFIA!?!
+//    }
+    
+    func configureCell(food:Food) -> Void {
 
-        // Configure the view for the selected state!!!!! FROM WHEREE ALIFIA!?!
-    }
-    func configureCell() {
-        self.daysLeft = NSInteger(self.userFood.expiryDate.timeIntervalSinceNow)
+        
+        self.foodNameLabel.text = food.name
         self.setupProgressBar()
     }
-    
-    func setupProgressBar() {
-        let progress = Float(self.daysLeft) / Float(userFood.food.shelfLife)             
 
-        self.progressBar.setProgress(Float(progress), animated: true)
+    func setupProgressBar() {
+//        let progress = Float(self.daysLeft) / Float(userFood.food.shelfLife)!
+//
+//        self.progressBar.setProgress(Float(progress), animated: true)
     }
     
 }

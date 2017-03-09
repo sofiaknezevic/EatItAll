@@ -9,6 +9,12 @@
 #import "DataManager.h"
 #import "EatItAll-Swift.h"
 
+@interface DataManager()
+
+@property (nonatomic, strong) RLMRealm *theRealm;
+
+@end
+
 @implementation DataManager
 
 
@@ -19,8 +25,6 @@
         sharedManager = [[self alloc] init];
         
         [sharedManager setupJSONDataSource];
-        [sharedManager setupUserDataSource];
-
      
     });
     return sharedManager;
@@ -29,9 +33,7 @@
 
 -(void)setupJSONDataSource{
     
-    //must refactor this disgusting code!!!
-    
-    RLMRealm *realm = [RLMRealm defaultRealm];
+    self.theRealm = [RLMRealm defaultRealm];
     RLMResults<Vegetable *> *vegetableFoods = [Vegetable allObjects];
     RLMResults<Fruit *> *fruitFoods = [Fruit allObjects];
     
@@ -80,8 +82,8 @@
                  Vegetable* veggie = [[Vegetable alloc] initWithName:food[@"name"] shelfLife:food[@"shelfLife"]imageName:food[@"imageName"] groupName:key];
                  
                  
-                 [realm transactionWithBlock:^{
-                     [realm addObject:veggie];
+                 [self.theRealm transactionWithBlock:^{
+                     [self.theRealm addObject:veggie];
                  }];
                  
              }else if ([key isEqualToString:@"Fruit"]){
@@ -90,8 +92,8 @@
                  Fruit* fruit = [[Fruit alloc] initWithName:food[@"name"] shelfLife:food[@"shelfLife"]imageName:food[@"imageName"] groupName:key];
                  
                  
-                 [realm transactionWithBlock:^{
-                     [realm addObject:fruit];
+                 [self.theRealm transactionWithBlock:^{
+                     [self.theRealm addObject:fruit];
                  }];
                  
              }
@@ -106,26 +108,17 @@
 
 }
 
--(void)setupUserDataSource{
-    
-    NSMutableDictionary<NSString*,NSMutableArray<UserFood*>*>* tempDictionary;
-    [tempDictionary setObject:[NSMutableArray new] forKey:@"About to expire"];
-    
-    for (NSString* key in self.foodTypeArray) {
-        [tempDictionary setObject:[NSMutableArray new] forKey:key];
-
-    }
-    
-}
-
 -(void)insertUserFoodArrayToDataSourceWithArray:(NSArray*)foodArrayFromUser {
-    
+
     for (Food* food in foodArrayFromUser) {
         UserFood* userFood =[[UserFood alloc] initWithCreationDate:[NSDate date] food:food];
-        NSMutableArray* userArray= [self.userDataSource objectForKey:food.groupName];
-        [userArray addObject:userFood];
+        
+            [self.theRealm transactionWithBlock:^{
+                
+                [self.theRealm addObject:userFood];
+            }];
+
     }
-    
 }
 
 @end

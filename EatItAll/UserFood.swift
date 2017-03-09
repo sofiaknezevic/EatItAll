@@ -14,7 +14,7 @@ class UserFood: RLMObject {
     var creationDate: Date!
     
     var expiryDate: Date {
-        
+        //deal with food.shelfLife being a string
         return makeExpiryDate(creationDate:creationDate,shelfLife:Double(food.shelfLife)!)
         
     }
