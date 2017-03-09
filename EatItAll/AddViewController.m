@@ -72,13 +72,16 @@
 {
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.alpha = 0.5;
-    NSString *key = self.dataManager.foodTypeArray[indexPath.section];
+    Food *newFood;
+    if(self.foodSegment.selectedSegmentIndex){
+        RLMResults* veggies = [Vegetable allObjects];
+       newFood = [veggies objectAtIndex:indexPath.row];
+    }else{
+        RLMResults* fruit = [Fruit allObjects];
+        newFood = [fruit objectAtIndex:indexPath.row];
+    }
 
-    
-    Food *newFood = [self.dataManager.JSONDataSource objectForKey:key][indexPath.row];
     [self.userFoodsArray addObject:newFood];
-
-    
     
 }
 

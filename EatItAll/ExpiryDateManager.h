@@ -12,5 +12,6 @@
 
 
 -(BOOL)sortDateForNotifications:(NSDate *)currentDate;
-
+-(NSDate *)getRidOfTime:(NSDate *)passedInDate;
+-(NSDate *)addThreeDaysToDate:(NSDate *)currentDate;
 @end

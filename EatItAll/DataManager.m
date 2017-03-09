@@ -27,7 +27,7 @@
         sharedManager = [[self alloc] init];
         
         [sharedManager setupJSONDataSource];
-        [sharedManager sortUserFoods];
+        sharedManager.expiryManager = [ExpiryDateManager new];
      
     });
     return sharedManager;
@@ -76,7 +76,8 @@
         [tempDictionary setObject:tempArray forKey:key];
         self.foodTypeArray = foodArray;
         self.JSONDataSource = tempDictionary;
-        
+        self.statusSectionsArray = [NSMutableArray arrayWithArray:@[@"About to Expire"]];
+        [self.statusSectionsArray addObjectsFromArray:foodArray];
      
      if (vegetableFoods.count < tempArray.count && fruitFoods.count < tempArray.count) {
          
@@ -123,9 +124,19 @@
     }
 }
 
--(void)sortUserFoods
+-(NSMutableArray*)filterUserFoodsByExpiryDate
 {
+    NSDate* today = [NSDate date];
+    NSDate* threeDaysFromNow = [self.expiryManager addThreeDaysToDate:today];
     
+    NSPredicate* expiryPredicate = [NSPredicate predicateWithFormat:@"(expiryDate >= %@) AND (expiryDate <= %@)",today,threeDaysFromNow];
+    RLMResults* userFoods = [UserFood allObjects];
+    NSMutableArray *array = [NSMutableArray array];
+    for (RLMObject *object in userFoods) {
+        [array addObject:object];
+    }
+    [array filterUsingPredicate:expiryPredicate];
+    return array;
 }
 
 @end

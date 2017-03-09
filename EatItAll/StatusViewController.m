@@ -36,18 +36,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    RLMResults *userResults = [UserFood allObjects];
+    if(section == 0 ){
+        NSMutableArray* aboutToExpire = [self.dataManager filterUserFoodsByExpiryDate];
+        return aboutToExpire.count;
+    }
+    else{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"food.groupName = '%@'",self.dataManager.statusSectionsArray[section]];
+    RLMResults<UserFood *> *userResults = [UserFood objectsWithPredicate:predicate];
     return userResults.count;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     StatusTableViewCell *cell = [self.statusTableView dequeueReusableCellWithIdentifier:kStatusCellIdentifier forIndexPath:indexPath];
+    UserFood *newUserFood;
+    if(indexPath.section == 0 ){
+        NSMutableArray* aboutToExpire = [self.dataManager filterUserFoodsByExpiryDate];
+        newUserFood = [aboutToExpire objectAtIndex:indexPath.row];
+    }
+    else{
     
-    RLMResults<UserFood *> *userResults = [UserFood allObjects];
-    UserFood *newUserFood = [userResults objectAtIndex:indexPath.row];
-    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"food.groupName = '%@'",self.dataManager.statusSectionsArray[indexPath.section]];
+    RLMResults<UserFood *> *userResults = [UserFood objectsWithPredicate:predicate];
+        newUserFood = [userResults objectAtIndex:indexPath.row];
+     
+    }
     [cell configureCellWithFood:newUserFood.food];
     
     return cell;
@@ -56,7 +71,9 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 1;
+    return self.dataManager.statusSectionsArray.count;
 }
-
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return self.dataManager.statusSectionsArray[section];
+}
 @end

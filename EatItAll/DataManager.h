@@ -10,12 +10,14 @@
 
 @class Food;
 @class UserFood;
+@class RLMResults;
 
 @interface DataManager : NSObject
 
 @property NSMutableDictionary<NSString*,NSArray*>* JSONDataSource;
 @property NSMutableArray<NSString*>* foodTypeArray;
 @property NSMutableDictionary<NSString*,NSMutableArray<UserFood*>*>* userDataSource;
+@property NSMutableArray<NSString*>* statusSectionsArray;
 
 
 
@@ -23,6 +25,6 @@
 
 + (id)defaultManager;
 -(void)insertUserFoodArrayToDataSourceWithArray:(NSArray*)foodArrayFromUser;
-
+-(NSMutableArray*)filterUserFoodsByExpiryDate;
 
 @end
