@@ -29,7 +29,6 @@
     [super viewDidLoad];
     
     self.aboutToExpire = [[NSMutableArray alloc] init];
-    
     self.dataManager = [DataManager defaultManager];
     
 
@@ -57,7 +56,8 @@
     if(section == 0 ){
         
         self.aboutToExpire = [self.dataManager filterUserFoodsByExpiryDate];
-        return self.aboutToExpire.count;
+        NSUInteger rows = self.aboutToExpire.count;
+        return rows;
         
     }else{
         
@@ -108,34 +108,40 @@
 
 
 
--(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
   
     return UITableViewCellEditingStyleDelete;
 }
 
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     StatusTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    if([self.aboutToExpire containsObject:cell.userFoodLan])
+   
+    NSInteger index =[self.aboutToExpire indexOfObject:cell.userFoodLan];
+    NSIndexPath* aboutToIndex = [NSIndexPath indexPathForRow:index inSection:0];
+    
+    if([self.aboutToExpire containsObject:cell.userFoodLan] && aboutToIndex != indexPath)
     {
-        NSInteger index =[self.aboutToExpire indexOfObject:cell.userFoodLan];
-        NSIndexPath* aboutToIndex = [NSIndexPath indexPathForRow:index inSection:0];
-        [self.aboutToExpire removeObject:cell.userFoodLan];
-        [tableView deleteRowsAtIndexPaths:@[indexPath,aboutToIndex] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [tableView.dataSource tableView:tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:aboutToIndex];
+    
+    }else
+    {
         [self.dataManager.theRealm transactionWithBlock:^{
-            [self.dataManager.theRealm deleteObject: cell.userFoodLan];
-        }];
-
-    }else{
-    [self.dataManager.theRealm transactionWithBlock:^{
                 [self.dataManager.theRealm deleteObject: cell.userFoodLan];
-    }];
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }];
     }
+
+//    NSIndexPath *otherIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section+1];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath, otherIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [tableView reloadData];
     
 }
+-(void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath{
 
-
+}
 
 @end
