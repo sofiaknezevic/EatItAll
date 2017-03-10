@@ -17,6 +17,8 @@ class StatusTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var daysLeftLabel: UILabel!
     
+    @IBOutlet weak var largerView: UIView!
+    
     dynamic var userFoodLan:UserFood!
 
     override func awakeFromNib() {
@@ -31,13 +33,14 @@ class StatusTableViewCell: UITableViewCell {
 
         
         foodNameLabel.text = userFood.food.name
-        foodImageView.layer.borderWidth = 1
-        foodImageView.layer.masksToBounds = false
-        foodImageView.layer.borderColor = UIColor.magenta.cgColor
-        foodImageView.layer.cornerRadius = foodImageView.frame.height/2
-        foodImageView.clipsToBounds = true
+        largerView.layer.borderWidth = 1
+        largerView.layer.masksToBounds = false
+        largerView.layer.borderColor = UIColor.black.cgColor
+        largerView.layer.cornerRadius = foodImageView.frame.height/2
+        largerView.clipsToBounds = true
      
         foodImageView.image = UIImage.init(named:userFood.food.imageName)
+        
         self.setupProgressBar(userFood:userFood, daysLeft: daysTillExpiry)
         daysLeftLabel.text = "\(Int(daysTillExpiry))"
     }

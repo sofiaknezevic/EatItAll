@@ -11,7 +11,6 @@
 #import "DataManager.h"
 
 #define kFoodCellIdentifier @"foodCell"
-#define kFoodHeaderIdentifier @"foodHeader"
 
 @interface AddViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -104,16 +103,6 @@
     
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    
-    HeaderCollectionReusableView *headerView = [self.foodCollectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kFoodHeaderIdentifier forIndexPath:indexPath];
-
-    [headerView configureHeaderWithFoodType:self.dataManager.foodTypeArray[self.foodSegment.selectedSegmentIndex]];
-    
-    return headerView;
-    
-}
 
 #pragma mark - User Input -
 

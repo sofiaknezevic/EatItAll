@@ -26,23 +26,24 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSs-Zz-ddu">
                                 <rect key="frame" x="154" y="580" width="67" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonClicked:" destination="asa-Mn-m1g" eventType="touchUpInside" id="n5i-fq-p1e"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vro-aE-CiQ" userLabel="Food Collection View">
-                                <rect key="frame" x="8" y="60" width="359" height="512"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="8" y="83" width="359" height="489"/>
+                                <color key="backgroundColor" red="0.93318295480000002" green="0.9330968261" blue="0.94954496619999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YAg-6h-Lkk">
                                     <size key="itemSize" width="101" height="100"/>
-                                    <size key="headerReferenceSize" width="50" height="49"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodCell" id="iJ3-lg-UER" customClass="AddCollectionViewCell" customModule="EatItAll" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="51" width="101" height="100"/>
+                                        <rect key="frame" x="0.0" y="2" width="101" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
@@ -89,51 +90,34 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodHeader" id="JLX-Es-f4L" customClass="HeaderCollectionReusableView" customModule="EatItAll" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="359" height="49"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvc-7d-SnZ">
-                                            <rect key="frame" x="8" y="0.0" width="343" height="49"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="xvc-7d-SnZ" firstAttribute="top" secondItem="JLX-Es-f4L" secondAttribute="topMargin" constant="-8" id="0dx-Kt-4q1"/>
-                                        <constraint firstItem="xvc-7d-SnZ" firstAttribute="leading" secondItem="JLX-Es-f4L" secondAttribute="leadingMargin" id="kqe-7z-Q0c"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="xvc-7d-SnZ" secondAttribute="bottom" constant="-8" id="pVc-c4-kEz"/>
-                                        <constraint firstItem="xvc-7d-SnZ" firstAttribute="trailing" secondItem="JLX-Es-f4L" secondAttribute="trailingMargin" id="vBy-uR-tbS"/>
-                                    </constraints>
-                                    <connections>
-                                        <outlet property="headerLabel" destination="xvc-7d-SnZ" id="dmD-Nq-9pR"/>
-                                    </connections>
-                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="asa-Mn-m1g" id="ajB-fa-fJw"/>
                                     <outlet property="delegate" destination="asa-Mn-m1g" id="Wr0-u1-hpp"/>
                                 </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMU-vg-aDS">
-                                <rect key="frame" x="105" y="28" width="165" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMU-vg-aDS">
+                                <rect key="frame" x="8" y="28" width="359" height="29"/>
+                                <color key="backgroundColor" red="0.93318295480000002" green="0.9330968261" blue="0.94954496619999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Fruit"/>
                                     <segment title="Vegetables"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentChanged:" destination="asa-Mn-m1g" eventType="valueChanged" id="WFk-uz-hld"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93318295480000002" green="0.9330968261" blue="0.94954496619999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="RSs-Zz-ddu" secondAttribute="trailing" constant="138" id="3bJ-22-AZw"/>
+                            <constraint firstAttribute="trailing" secondItem="LMU-vg-aDS" secondAttribute="trailing" constant="8" id="88y-Aq-nid"/>
+                            <constraint firstItem="LMU-vg-aDS" firstAttribute="top" secondItem="HXu-KQ-Sj7" secondAttribute="bottom" constant="8" id="DGs-9z-lrK"/>
+                            <constraint firstItem="LMU-vg-aDS" firstAttribute="leading" secondItem="0tY-sN-Fg8" secondAttribute="leading" constant="8" id="FGw-QL-Rcq"/>
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="trailing" secondItem="0tY-sN-Fg8" secondAttribute="trailingMargin" constant="8" id="GdH-uI-qyG"/>
                             <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="vro-aE-CiQ" secondAttribute="bottom" constant="46" id="PAE-mU-det"/>
                             <constraint firstItem="Lgc-By-eFb" firstAttribute="top" secondItem="RSs-Zz-ddu" secondAttribute="bottom" constant="8" id="Z06-3n-Dg7"/>
-                            <constraint firstItem="vro-aE-CiQ" firstAttribute="top" secondItem="HXu-KQ-Sj7" secondAttribute="bottom" constant="40" id="ZRd-sM-nrF"/>
+                            <constraint firstItem="vro-aE-CiQ" firstAttribute="top" secondItem="HXu-KQ-Sj7" secondAttribute="bottom" constant="63" id="ZRd-sM-nrF"/>
                             <constraint firstItem="RSs-Zz-ddu" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="mba-2q-y8a"/>
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="oPW-92-fTa"/>
                         </constraints>
