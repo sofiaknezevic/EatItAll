@@ -109,12 +109,23 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     StatusTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    [self.dataManager.theRealm transactionWithBlock:^{
-                [self.dataManager.theRealm deleteObject: cell.userFoodLan];}];
-    
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    if([self.aboutToExpire containsObject:cell.userFoodLan])
+    {
+        NSInteger index =[self.aboutToExpire indexOfObject:cell.userFoodLan];
+        NSIndexPath* aboutToIndex = [NSIndexPath indexPathForRow:index inSection:0];
+        [self.aboutToExpire removeObject:cell.userFoodLan];
+        [tableView deleteRowsAtIndexPaths:@[indexPath,aboutToIndex] withRowAnimation:UITableViewRowAnimationFade];
+        [self.dataManager.theRealm transactionWithBlock:^{
+            [self.dataManager.theRealm deleteObject: cell.userFoodLan];
+        }];
 
+    }else{
+    [self.dataManager.theRealm transactionWithBlock:^{
+                [self.dataManager.theRealm deleteObject: cell.userFoodLan];
+    }];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
 }
 
 

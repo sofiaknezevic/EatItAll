@@ -14,5 +14,5 @@
 
 -(BOOL)sortDateForNotifications:(NSDate *)currentDate andUserFoodDate:(UserFood *)userFoodDate;
 -(NSDate *)getRidOfTime:(NSDate *)passedInDate;
--(NSDate *)addThreeDaysToDate:(NSDate *)currentDate;
+-(NSDate *)addFourDaysToDate:(NSDate *)currentDate;
 @end

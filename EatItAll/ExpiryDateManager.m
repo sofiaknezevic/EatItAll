@@ -57,11 +57,11 @@
     
 }
 
--(NSDate *)addThreeDaysToDate:(NSDate *)currentDate
+-(NSDate *)addFourDaysToDate:(NSDate *)currentDate
 {
     NSDateComponents *threeDayComponent = [[NSDateComponents alloc] init];
     
-    threeDayComponent.day = 3;
+    threeDayComponent.day = 4;
     
     NSCalendar *theCalendar = [NSCalendar currentCalendar];
     

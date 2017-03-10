@@ -129,9 +129,9 @@
 -(NSMutableArray*)filterUserFoodsByExpiryDate
 {
     NSDate* today = [NSDate date];
-    NSDate* threeDaysFromNow = [self.expiryManager addThreeDaysToDate:today];
+    NSDate* fourDaysFromNow = [self.expiryManager addFourDaysToDate:today];
     
-    NSPredicate* expiryPredicate = [NSPredicate predicateWithFormat:@"(expiryDate >= %@) AND (expiryDate <= %@)",today,threeDaysFromNow];
+    NSPredicate* expiryPredicate = [NSPredicate predicateWithFormat:@"(expiryDate >= %@) AND (expiryDate <= %@)",today,fourDaysFromNow];
     
     RLMResults* userFoods = [UserFood allObjects];
     NSMutableArray *array = [NSMutableArray array];
