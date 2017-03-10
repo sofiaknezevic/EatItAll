@@ -27,14 +27,14 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     
-    [NotificationManager notificationManager];
+    [[NotificationManager notificationManager] scheduleNotifications];
     
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
  
-   //[NotificationManager notificationManager];
+   
     
 }
 
@@ -52,7 +52,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
-   // [NotificationManager notificationManager];
+ 
 
     
 }

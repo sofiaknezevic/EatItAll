@@ -42,6 +42,7 @@
     
 }
 
+
 - (IBAction)infoButtonPushed:(id)sender {
     
     self.hiddenView.hidden = NO;

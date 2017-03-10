@@ -23,9 +23,6 @@
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
         
-
-        [sharedManager scheduleNotifications];
-        
         
     });
     return sharedManager;
@@ -44,7 +41,7 @@
     if (withExpiryDate != nil) {
     
     UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:60
-                                                                                                    repeats:YES];
+                        repeats:YES];
     
     NSString *stringIdentifier = @"notificationIdentifier";
     UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:stringIdentifier
@@ -64,6 +61,8 @@
 
 - (void)scheduleNotifications
 {
+    
+
     
     UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound;
     
@@ -105,14 +104,11 @@
     }else{
         
         [[UNUserNotificationCenter currentNotificationCenter]removeAllPendingNotificationRequests];
-        [[UNUserNotificationCenter currentNotificationCenter] removeAllDeliveredNotifications];
         
     }
-    
-    
   
 
- 
+
     
 }
 @end
