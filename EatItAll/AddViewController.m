@@ -102,7 +102,6 @@
     
     [self.userFoodsArray removeObject:foodToDelete];
     
-    
 }
 
 
@@ -114,8 +113,10 @@
     [self.dataManager insertUserFoodArrayToDataSourceWithArray:self.userFoodsArray];
     
     for (int i = 0; i<self.userFoodsArray.count; i++) {
+        
         [self.foodCollectionView deselectItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:NO];
     }
+    [self.foodCollectionView reloadData];
     [self.userFoodsArray removeAllObjects];
  
     
