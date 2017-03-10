@@ -14,7 +14,7 @@
 
 +(id)notificationManager;
 
-- (NSMutableArray<UserFood *> *)scheduleNotifications;
+- (void)scheduleNotifications;
 - (void)setUpNotifications:(NSDate *)withExpiryDate;
 
 @end

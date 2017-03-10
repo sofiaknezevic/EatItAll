@@ -9,6 +9,12 @@
 #import "NotificationManager.h"
 #import "ExpiryDateManager.h"
 
+@interface NotificationManager()
+
+@property (nonatomic, strong) NSMutableArray<UserFood *> *expiredUserFoods;
+
+@end
+
 @implementation NotificationManager
 
 + (id)notificationManager {
@@ -20,34 +26,13 @@
 
         [sharedManager scheduleNotifications];
         
+        
     });
     return sharedManager;
 }
 
 - (void)setUpNotifications:(NSDate *)withExpiryDate
 {
-
-    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound;
-    
-    [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        
-        if (!granted) {
-            
-            NSLog(@"Not granted!!");
-        }
-        
-    }];
-    
-    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-        
-        if (settings.authorizationStatus != UNAuthorizationStatusAuthorized) {
-            
-            //set up an alert that tells the user where to go if they want to change their settings in order to have some notifications.
-            NSLog(@"");
-            
-        }
-    }];
     
     
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
@@ -56,7 +41,7 @@
     content.sound = [UNNotificationSound defaultSound];
     
   
-    if (withExpiryDate) {
+    if (withExpiryDate != nil) {
     
     UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:60
                                                                                                     repeats:YES];
@@ -66,25 +51,25 @@
                                                                           content:content
                                                                           trigger:trigger];
     
-    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+    [[UNUserNotificationCenter currentNotificationCenter]
+     addNotificationRequest:request
+      withCompletionHandler:nil];
         
-        if (error != nil) {
-            
-            NSLog(@"");
-            
-        }
-        
-    }];
     
     }
+            
+        
     
 }
 
-- (NSMutableArray<UserFood *> *)scheduleNotifications
+- (void)scheduleNotifications
 {
+    
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound;
+    
     ExpiryDateManager *newManager = [[ExpiryDateManager alloc] init];
     
-    NSMutableArray<UserFood *> *expiredUserFoods = [[NSMutableArray alloc] init];
+    self.expiredUserFoods = [[NSMutableArray alloc] init];
     
     RLMResults *allUserFoods = [UserFood allObjects];
     
@@ -92,19 +77,41 @@
 
         if([newManager sortDateForNotifications:[NSDate date] andUserFoodDate:notificationForUserFood]){
             
-            [expiredUserFoods addObject:notificationForUserFood];
+            [self.expiredUserFoods addObject:notificationForUserFood];
             
         }
         
     }
     
-    if (expiredUserFoods.count != 0) {
+    
+    
+    [[UNUserNotificationCenter currentNotificationCenter]
+     requestAuthorizationWithOptions:options
+                   completionHandler:^(BOOL granted, NSError * _Nullable error) {
         
-        [self setUpNotifications:expiredUserFoods[0].expiryDate];
+        if (!granted) {
+            
+       
+            [self.expiredUserFoods removeAllObjects];
+            
+        }
+        
+    }];
+    
+    if (self.expiredUserFoods.count != 0 && self.expiredUserFoods != nil) {
+        
+        [self setUpNotifications:self.expiredUserFoods[0].expiryDate];
+        
+    }else{
+        
+        [[UNUserNotificationCenter currentNotificationCenter]removeAllPendingNotificationRequests];
+        [[UNUserNotificationCenter currentNotificationCenter] removeAllDeliveredNotifications];
         
     }
+    
+    
+  
 
-    return expiredUserFoods;
  
     
 }

@@ -47,9 +47,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="statusCell" rowHeight="56" id="ZrV-9s-Arc" customClass="StatusTableViewCell" customModule="EatItAll" customModuleProvider="target">
-
-                                        <rect key="frame" x="0.0" y="91" width="375" height="56"/>
-                                        
+                                        <rect key="frame" x="0.0" y="90.5" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZrV-9s-Arc" id="4hv-Dp-mxh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>

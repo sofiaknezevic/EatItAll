@@ -25,7 +25,7 @@
       {
         "name":"Lettuce",
         "shelfLife":"5",
-        "imageName":"leaf-576272_150.png",
+        "imageName":"lettuce.png",
       },
       {
         "name":"Cucumber",
@@ -35,97 +35,97 @@
       {
         "name":"Bell Pepper",
         "shelfLife":"14",
-        "imageName":"bell-pepper-145103_150.png",
+        "imageName":"bellpepper.png",
       },
       {
         "name":"Carrot",
         "shelfLife":"31",
-        "imageName":"carrot-1300572_150.png",
+        "imageName":"carrot.png",
       },
       {
         "name":"Cabbage",
         "shelfLife":"21",
-        "imageName":"cabbage-559887_150.png",
+        "imageName":"cabbage.png",
       },
       {
         "name":"Broccoli",
         "shelfLife":"10",
-        "imageName":"broccoli-575500_150.png",
+        "imageName":"broccoli.png",
       },
       {
         "name":"Green Beans",
         "shelfLife":"6",
-        "imageName":"green-37220_150.png",
+        "imageName":"greenbeans.png",
       },
       {
         "name":"Celery",
         "shelfLife":"21",
-        "imageName":"celery-311953_150.png",
+        "imageName":"celery.png",
       },
       {
         "name":"Pumpkin",
         "shelfLife":"124",
-        "imageName":"pumpkin-1300201_150.png",
+        "imageName":"pumpkin.png",
       },
       {
         "name":"Squash",
         "shelfLife":"62",
-        "imageName":"squash-32901_150.png",
+        "imageName":"squash.png",
       },
       {
         "name":"Mushrooms",
         "shelfLife":"8",
-        "imageName":"mushroom-576462_150.png",
+        "imageName":"mushroom.png",
       },
       {
         "name":"Spinach",
         "shelfLife":"6",
-        "imageName":"green-576756_150.png",
+        "imageName":"spinach.png",
       },
       {
         "name":"Garlic",
         "shelfLife":"155",
-        "imageName":"garlic-146810_150.png",
+        "imageName":"garlic.png",
       },
       {
         "name":"Cauliflower",
         "shelfLife":"14",
-        "imageName":"cauliflower-37841_150.png",
+        "imageName":"cauliflower.png",
       },
       {
         "name":"Asparagus",
         "shelfLife":"6",
-        "imageName":"asparagus-32916_150.png",
+        "imageName":"asparagus.png",
       },
       {
         "name":"Eggplant",
         "shelfLife":"4",
-        "imageName":"eggplant-309459_150.png",
+        "imageName":"eggplant.png",
       },
       {
         "name":"Radishes",
         "shelfLife":"4",
-        "imageName":"radish-576640_150.png",
+        "imageName":"radish.png",
       },
       {
         "name":"Brussel Sprouts",
         "shelfLife":"6",
-        "imageName":"bag-576696_150.png",
+        "imageName":"brusselsprout.png",
       },
       {
         "name":"Kale",
         "shelfLife":"10",
-        "imageName":"chard-37215_150.png",
+        "imageName":"kale.png",
       },
       {
         "name":"Peas",
         "shelfLife":"2",
-        "imageName":"peas-575815_150.png",
+        "imageName":"peas.png",
       },
       {
         "name":"Zucchini",
         "shelfLife":"6",
-        "imageName":"courgette-37213_150.png",
+        "imageName":"zucchini.png",
       },
 
     ],
@@ -133,7 +133,7 @@
       {
         "name":"Apple",
         "shelfLife":"31",
-        "imageName":"apple-158419_150.png",
+        "imageName":"apple.png",
       },
       {
         "name":"Banana",
@@ -143,47 +143,47 @@
       {
         "name":"Pineapple",
         "shelfLife":"3",
-        "imageName":"pineapple-295366_150.png",
+        "imageName":"pineapple.png",
       },
       {
         "name":"Avocado",
         "shelfLife":"4",
-        "imageName":"avocado-33935_150.png",
+        "imageName":"avocado.png",
       },
       {
         "name":"Strawberries",
         "shelfLife":"6",
-        "imageName":"strawberries-299525_150.png",
+        "imageName":"strawberry.png",
       },
       {
         "name":"Blueberries",
         "shelfLife":"7",
-        "imageName":"berries-30430_150.png",
+        "imageName":"blueberry.png",
       },
       {
         "name":"Blackberries",
         "shelfLife":"3",
-        "imageName":"raspberry-146739_150.png",
+        "imageName":"blackberry.png",
       },
       {
         "name":"Plum",
         "shelfLife":"3",
-        "imageName":"plum-29713_150.png",
+        "imageName":"plum.png",
       },
       {
         "name":"Peach",
         "shelfLife":"21",
-        "imageName":"peaches-25334_150.png",
+        "imageName":"peach.png",
       },
       {
         "name":"Pear",
         "shelfLife":"4",
-        "imageName":"eat-1296402_150.png",
+        "imageName":"pear.png",
       },
       {
         "name":"Kiwi",
         "shelfLife":"10",
-        "imageName":"kiwi-42561_150.png",
+        "imageName":"kiwi.png",
       },
       {
         "name":"Watermelon",
@@ -193,7 +193,7 @@
       {
         "name":"Pomegranate",
         "shelfLife":"6",
-        "imageName":"pomegranate-150255_150.png",
+        "imageName":"pomegranate.png",
       },
       {
         "name":"Orange",
@@ -203,32 +203,32 @@
       {
         "name":"Mandarin",
         "shelfLife":"10",
-        "imageName":"tangerine-151616_150.png",
+        "imageName":"mandarin.png",
       },
       {
         "name":"Lemon",
         "shelfLife":"21",
-        "imageName":"citrus-1299776_150.png",
+        "imageName":"lemon.png",
       },
       {
         "name":"Lime",
         "shelfLife":"31",
-        "imageName":"lime-25314_150.png",
+        "imageName":"lime.png",
       },
       {
         "name":"Mango",
         "shelfLife":"5",
-        "imageName":"mango-304315_150.png",
+        "imageName":"mango.png",
       },
       {
         "name":"Cantaloupe",
         "shelfLife":"5",
-        "imageName":"cantaloupe-311084_150.png",
+        "imageName":"cantaloupe.png",
       },
       {
         "name":"Coconut",
         "shelfLife":"10",
-        "imageName":"coconuts-575780_150.png",
+        "imageName":"coconut.png",
       },
       {
         "name":"Cherries",
@@ -238,17 +238,17 @@
       {
         "name":"Figs",
         "shelfLife":"5",
-        "imageName":"fig-42900_150.png",
+        "imageName":"fig.png",
       },
       {
         "name":"Grapes",
         "shelfLife":"5",
-        "imageName":"bunch-of-grapes-1300662_150.png",
+        "imageName":"grapes.png",
       },
       {
         "name":"Grapefruit",
         "shelfLife":"10",
-        "imageName":"grapefruit-154469_150.png",
+        "imageName":"grapefruit.png",
       }
     ]
   },
