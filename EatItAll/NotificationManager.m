@@ -7,7 +7,6 @@
 //
 
 #import "NotificationManager.h"
-#import "EatItAll-Swift.h"
 #import "ExpiryDateManager.h"
 
 @implementation NotificationManager
@@ -19,18 +18,69 @@
         sharedManager = [[self alloc] init];
         
 
+        [sharedManager scheduleNotifications];
         
     });
     return sharedManager;
 }
 
+- (void)setUpNotifications:(NSDate *)withExpiryDate
+{
 
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound;
+    
+    [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        
+        if (!granted) {
+            
+            NSLog(@"Not granted!!");
+        }
+        
+    }];
+    
+    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        
+        if (settings.authorizationStatus != UNAuthorizationStatusAuthorized) {
+            
+            
+            
+        }
+    }];
+    
+    
+    UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+    content.title = @"Food is about to expire!";
+    content.body = @"CLICK ME TO FIND OUT WHICH FOOD YOU LEFT UNEATEN!!";
+    content.sound = [UNNotificationSound defaultSound];
+    
+    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:60
+                                                                                                    repeats:YES];
+    
+    NSString *stringIdentifier = @"notificationIdentifier";
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:stringIdentifier
+                                                                          content:content
+                                                                          trigger:trigger];
+    
+    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        
+        if (error != nil) {
+            
+            NSLog(@"");
+            
+        }
+        
+    }];
+    
+    
+    
+}
 
-- (NSMutableArray *)scheduleNotifications
+- (NSMutableArray<UserFood *> *)scheduleNotifications
 {
     ExpiryDateManager *newManager = [[ExpiryDateManager alloc] init];
     
-    NSMutableArray *expiredUserFoods = [[NSMutableArray alloc] init];
+    NSMutableArray<UserFood *> *expiredUserFoods = [[NSMutableArray alloc] init];
     
     RLMResults *allUserFoods = [UserFood allObjects];
     
@@ -43,6 +93,8 @@
         }
         
     }
+    
+    
     
 
     return expiredUserFoods;

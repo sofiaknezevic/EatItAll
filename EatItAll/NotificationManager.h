@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
+#import "EatItAll-Swift.h"
 
 @interface NotificationManager : NSObject <UNUserNotificationCenterDelegate>
 
 +(id)notificationManager;
 
-- (NSMutableArray *)scheduleNotifications;
+- (NSMutableArray<UserFood *> *)scheduleNotifications;
+- (void)setUpNotifications:(NSDate *)withExpiryDate;
 
 @end
