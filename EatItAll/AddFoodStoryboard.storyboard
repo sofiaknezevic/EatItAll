@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,9 +48,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-So-khG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="81.5"/>
-                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfN-aM-OFN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="81"/>
+                                                    <subviews>
+                                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-So-khG">
+                                                            <rect key="frame" x="25.5" y="15.5" width="50.5" height="50.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="U7d-So-khG" secondAttribute="height" multiplier="1:1" id="YOD-ib-jk7"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="U7d-So-khG" firstAttribute="width" secondItem="gfN-aM-OFN" secondAttribute="width" multiplier="0.5" id="b1K-0b-Vly"/>
+                                                        <constraint firstItem="U7d-So-khG" firstAttribute="centerX" secondItem="gfN-aM-OFN" secondAttribute="centerX" id="fWK-kv-3j6"/>
+                                                        <constraint firstItem="U7d-So-khG" firstAttribute="centerY" secondItem="gfN-aM-OFN" secondAttribute="centerY" id="p2M-WQ-txx"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-TT-ZSt">
                                                     <rect key="frame" x="0.0" y="81" width="101" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
@@ -58,18 +74,18 @@
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="gfN-aM-OFN" firstAttribute="top" secondItem="iJ3-lg-UER" secondAttribute="top" id="4jv-vn-yXs"/>
+                                            <constraint firstItem="4m2-TT-ZSt" firstAttribute="top" secondItem="gfN-aM-OFN" secondAttribute="bottom" id="5e3-hS-Nj8"/>
                                             <constraint firstAttribute="bottom" secondItem="4m2-TT-ZSt" secondAttribute="bottom" id="BCI-i9-Q8e"/>
-                                            <constraint firstItem="U7d-So-khG" firstAttribute="top" secondItem="iJ3-lg-UER" secondAttribute="top" id="Wgj-Bo-riH"/>
-                                            <constraint firstItem="4m2-TT-ZSt" firstAttribute="top" secondItem="U7d-So-khG" secondAttribute="bottom" id="X7h-ie-aS3"/>
+                                            <constraint firstItem="gfN-aM-OFN" firstAttribute="leading" secondItem="iJ3-lg-UER" secondAttribute="leading" id="Fzc-Nd-lhe"/>
                                             <constraint firstAttribute="trailing" secondItem="4m2-TT-ZSt" secondAttribute="trailing" id="aJe-im-TGM"/>
-                                            <constraint firstItem="4m2-TT-ZSt" firstAttribute="top" secondItem="U7d-So-khG" secondAttribute="bottom" id="eZH-Mk-Prr"/>
+                                            <constraint firstAttribute="trailing" secondItem="gfN-aM-OFN" secondAttribute="trailing" id="ctY-yb-0Mt"/>
                                             <constraint firstItem="4m2-TT-ZSt" firstAttribute="leading" secondItem="iJ3-lg-UER" secondAttribute="leading" id="hjl-xx-gIS"/>
-                                            <constraint firstAttribute="trailing" secondItem="U7d-So-khG" secondAttribute="trailing" id="i78-Xa-5WN"/>
-                                            <constraint firstItem="U7d-So-khG" firstAttribute="leading" secondItem="iJ3-lg-UER" secondAttribute="leading" id="p6Q-8K-F57"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="foodImageView" destination="U7d-So-khG" id="RKb-ET-V3J"/>
                                             <outlet property="foodLabel" destination="4m2-TT-ZSt" id="mvh-Nk-mSQ"/>
+                                            <outlet property="largerView" destination="gfN-aM-OFN" id="aoH-uL-0dN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

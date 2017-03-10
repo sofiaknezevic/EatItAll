@@ -43,16 +43,20 @@
         
         if (settings.authorizationStatus != UNAuthorizationStatusAuthorized) {
             
-            
+            //set up an alert that tells the user where to go if they want to change their settings in order to have some notifications.
+            NSLog(@"");
             
         }
     }];
     
     
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
-    content.title = @"Food is about to expire!";
-    content.body = @"CLICK ME TO FIND OUT WHICH FOOD YOU LEFT UNEATEN!!";
+    content.title = @"ONE OF YOUR FOODS WILL EXPIRE TOMORROW!";
+    content.body = @"..at least you know it's not 🍕..";
     content.sound = [UNNotificationSound defaultSound];
+    
+  
+    if (withExpiryDate) {
     
     UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:60
                                                                                                     repeats:YES];
@@ -72,7 +76,7 @@
         
     }];
     
-    
+    }
     
 }
 
@@ -94,8 +98,11 @@
         
     }
     
-    
-    
+    if (expiredUserFoods.count != 0) {
+        
+        [self setUpNotifications:expiredUserFoods[0].expiryDate];
+        
+    }
 
     return expiredUserFoods;
  

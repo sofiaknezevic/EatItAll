@@ -13,6 +13,8 @@ class AddCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var foodLabel: UILabel!
     
+    @IBOutlet weak var largerView: UIView!
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -21,11 +23,11 @@ class AddCollectionViewCell: UICollectionViewCell {
     func configureCell(food:Food) -> Void {
         
         foodLabel.text = food.name
-        foodImageView.layer.borderWidth = 1
-        foodImageView.layer.masksToBounds = false
-        foodImageView.layer.borderColor = UIColor.magenta.cgColor
-        foodImageView.layer.cornerRadius = foodImageView.frame.height/2
-        foodImageView.clipsToBounds = true   
+        largerView.layer.borderWidth = 1
+        largerView.layer.masksToBounds = false
+        largerView.layer.borderColor = UIColor.magenta.cgColor
+        largerView.layer.cornerRadius = foodImageView.frame.height/2
+        largerView.clipsToBounds = true
         foodImageView.image = UIImage.init(named:food.imageName)
         
     }
