@@ -101,15 +101,6 @@
     
     [self.userFoodsArray removeObject:foodToDelete];
     
-//    [self.dataManager.theRealm transactionWithBlock:^{
-//        
-//        
-//        [self.dataManager.theRealm deleteObject:foodToDelete];
-//        
-//        
-//    }];
-    
-    
     
 }
 
@@ -131,7 +122,6 @@
 
     [self.dataManager insertUserFoodArrayToDataSourceWithArray:self.userFoodsArray];
     [self.userFoodsArray removeAllObjects];
-//    NSArray* self.foodCollectionView indexPathsForSelectedItems
  
     
     

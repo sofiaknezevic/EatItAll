@@ -132,6 +132,7 @@
     NSDate* threeDaysFromNow = [self.expiryManager addThreeDaysToDate:today];
     
     NSPredicate* expiryPredicate = [NSPredicate predicateWithFormat:@"(expiryDate >= %@) AND (expiryDate <= %@)",today,threeDaysFromNow];
+    
     RLMResults* userFoods = [UserFood allObjects];
     NSMutableArray *array = [NSMutableArray array];
     for (RLMObject *object in userFoods) {

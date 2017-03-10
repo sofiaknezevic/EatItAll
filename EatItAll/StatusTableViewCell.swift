@@ -17,18 +17,17 @@ class StatusTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var daysLeftLabel: UILabel!
     
-
+    dynamic var userFoodLan:UserFood!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
 
-
     
     func configureCell(userFood:UserFood) -> Void {
         let daysTillExpiry = Float(userFood.expiryDate.timeIntervalSince(Date.init()))/Float (86400)
-
+        userFoodLan = userFood
 
         
         foodNameLabel.text = userFood.food.name
@@ -39,7 +38,6 @@ class StatusTableViewCell: UITableViewCell {
         foodImageView.clipsToBounds = true
      
         foodImageView.image = UIImage.init(named:userFood.food.imageName)
-        foodImageView.image?.draw(in: foodImageView.layer.bounds)
         self.setupProgressBar(userFood:userFood, daysLeft: daysTillExpiry)
         daysLeftLabel.text = "\(Int(daysTillExpiry))"
     }
