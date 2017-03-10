@@ -39,6 +39,8 @@
     [self updateRealmResults];
 }
 
+
+
 #pragma mark - CollectionViewDataSource -
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -110,6 +112,10 @@
     
 
     [self.dataManager insertUserFoodArrayToDataSourceWithArray:self.userFoodsArray];
+    
+    for (int i = 0; i<self.userFoodsArray.count; i++) {
+        [self.foodCollectionView deselectItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:NO];
+    }
     [self.userFoodsArray removeAllObjects];
  
     

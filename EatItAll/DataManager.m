@@ -139,7 +139,7 @@
         [array addObject:object];
     }
     [array filterUsingPredicate:expiryPredicate];
-    return array;
+    return [array mutableCopy];
 }
 
 @end
