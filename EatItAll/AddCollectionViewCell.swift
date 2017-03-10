@@ -25,7 +25,7 @@ class AddCollectionViewCell: UICollectionViewCell {
         foodLabel.text = food.name
         largerView.layer.borderWidth = 1
         largerView.layer.masksToBounds = false
-        largerView.layer.borderColor = UIColor.magenta.cgColor
+        largerView.layer.borderColor = UIColor.black.cgColor
         largerView.layer.cornerRadius = foodImageView.frame.height/2
         largerView.clipsToBounds = true
         foodImageView.image = UIImage.init(named:food.imageName)

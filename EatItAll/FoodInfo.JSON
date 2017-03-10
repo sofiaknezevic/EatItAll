@@ -138,7 +138,7 @@
       {
         "name":"Banana",
         "shelfLife":"1",
-        "imageName":"bananas-311788_150.png",
+        "imageName":"bananas.png",
       },
       {
         "name":"Pineapple",
@@ -188,7 +188,7 @@
       {
         "name":"Watermelon",
         "shelfLife":"12",
-        "imageName":"food-1976177_150.png",
+        "imageName":"watermelon.png",
       },
       {
         "name":"Pomegranate",
@@ -233,7 +233,7 @@
       {
         "name":"Cherries",
         "shelfLife":"5",
-        "imageName":"cherry-35288_150.png",
+        "imageName":"cherries.png",
       },
       {
         "name":"Figs",

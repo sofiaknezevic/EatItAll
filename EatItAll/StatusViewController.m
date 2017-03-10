@@ -18,6 +18,7 @@
 @property (nonatomic, strong) DataManager *dataManager;
 
 @property (nonatomic, strong) NSMutableArray *aboutToExpire;
+@property (weak, nonatomic) IBOutlet UIView *hiddenView;
 
 @end
 
@@ -39,6 +40,13 @@
     
     [super viewWillAppear:YES];
     [self.statusTableView reloadData];
+    
+}
+
+- (IBAction)infoButtonPushed:(id)sender {
+    
+    self.hiddenView.hidden = NO;
+    
     
 }
 
