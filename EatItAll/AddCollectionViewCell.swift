@@ -21,13 +21,13 @@ class AddCollectionViewCell: UICollectionViewCell {
     func configureCell(food:Food) -> Void {
         
         foodLabel.text = food.name
-        
-        foodImageView.image = UIImage.init(named:food.imageName)
         foodImageView.layer.borderWidth = 1
         foodImageView.layer.masksToBounds = false
         foodImageView.layer.borderColor = UIColor.magenta.cgColor
         foodImageView.layer.cornerRadius = foodImageView.frame.height/2
-        foodImageView.clipsToBounds = true
+        foodImageView.clipsToBounds = true   
+        foodImageView.image = UIImage.init(named:food.imageName)
+        
     }
     
 

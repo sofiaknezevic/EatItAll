@@ -27,25 +27,28 @@ class StatusTableViewCell: UITableViewCell {
 
     
     func configureCell(userFood:UserFood) -> Void {
+        let daysTillExpiry = Float(userFood.expiryDate.timeIntervalSince(Date.init()))/Float (86400)
 
 
         
         foodNameLabel.text = userFood.food.name
-        foodImageView.image = UIImage.init(named:userFood.food.imageName)
         foodImageView.layer.borderWidth = 1
         foodImageView.layer.masksToBounds = false
         foodImageView.layer.borderColor = UIColor.magenta.cgColor
         foodImageView.layer.cornerRadius = foodImageView.frame.height/2
         foodImageView.clipsToBounds = true
-        self.setupProgressBar(userFood:userFood)
+     
+        foodImageView.image = UIImage.init(named:userFood.food.imageName)
+        foodImageView.image?.draw(in: foodImageView.layer.bounds)
+        self.setupProgressBar(userFood:userFood, daysLeft: daysTillExpiry)
+        daysLeftLabel.text = "\(Int(daysTillExpiry))"
     }
 
 
-    func setupProgressBar(userFood:UserFood) {
+    func setupProgressBar(userFood:UserFood, daysLeft: Float) {
         
-        let daysTillExpiry = Float(userFood.expiryDate.timeIntervalSince(Date.init()))/Float (86400)
     
-        let progress = daysTillExpiry / Float(userFood.food.shelfLife)!
+        let progress = daysLeft / Float(userFood.food.shelfLife)!
 
         self.progressBar.setProgress(Float(progress), animated: true)
     }
