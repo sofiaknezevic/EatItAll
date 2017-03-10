@@ -122,7 +122,9 @@
                             <constraint firstItem="vro-aE-CiQ" firstAttribute="centerX" secondItem="0tY-sN-Fg8" secondAttribute="centerX" id="oPW-92-fTa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Food" id="H9i-HK-0To"/>
+                    <tabBarItem key="tabBarItem" title="Add Food" id="H9i-HK-0To">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="foodCollectionView" destination="vro-aE-CiQ" id="meF-C6-KkG"/>
