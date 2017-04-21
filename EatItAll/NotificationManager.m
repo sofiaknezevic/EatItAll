@@ -61,9 +61,6 @@
 
 - (void)scheduleNotifications
 {
-    
-
-    
     UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound;
     
     ExpiryDateManager *newManager = [[ExpiryDateManager alloc] init];
@@ -106,9 +103,6 @@
         [[UNUserNotificationCenter currentNotificationCenter]removeAllPendingNotificationRequests];
         
     }
-  
-
-
     
 }
 @end

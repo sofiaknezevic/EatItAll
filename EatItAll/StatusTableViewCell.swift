@@ -30,7 +30,6 @@ class StatusTableViewCell: UITableViewCell {
     func configureCell(userFood:UserFood) -> Void {
         let daysTillExpiry = Float(userFood.expiryDate.timeIntervalSince(Date.init()))/Float (86400)
         userFoodLan = userFood
-
         
         foodNameLabel.text = userFood.food.name
         largerView.layer.borderWidth = 1
