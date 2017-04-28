@@ -40,8 +40,8 @@
   
     if (withExpiryDate != nil) {
     
-    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:60
-                        repeats:YES];
+    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:86400
+                        repeats:NO];
     
     NSString *stringIdentifier = @"notificationIdentifier";
     UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:stringIdentifier

@@ -41,7 +41,7 @@ class StatusTableViewCell: UITableViewCell {
         foodImageView.image = UIImage.init(named:userFood.food.imageName)
         
         self.setupProgressBar(userFood:userFood, daysLeft: daysTillExpiry)
-        daysLeftLabel.text = "\(Int(daysTillExpiry))"
+        daysLeftLabel.text = "\(Int(daysTillExpiry)) days left"
     }
 
 
